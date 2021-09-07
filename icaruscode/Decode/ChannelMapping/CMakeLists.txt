@@ -1,6 +1,6 @@
 cet_enable_asserts()
 
-art_make(
+art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
           EXCLUDE "PMTChannelMapDumper.cxx"
           LIB_LIBRARIES
                         art_Utilities

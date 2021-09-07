@@ -1,7 +1,7 @@
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
 cet_add_compiler_flags(CXX -Wno-maybe-uninitialized)
 endif()
-art_make(    LIBRARY_NAME icaruscode_CRTUtils
+art_make(    LIBRARY_NAME icaruscode_CRTUtils ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
              LIB_LIBRARIES larcorealg_Geometry
                            larcore_Geometry_Geometry_service
                            larsim_Simulation lardataobj_Simulation

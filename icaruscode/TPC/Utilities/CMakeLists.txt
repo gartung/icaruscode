@@ -37,7 +37,7 @@ set( icarus_util_lib_list
                         ${ROOT_BASIC_LIB_LIST}
     )
 
-art_make( 
+art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
 #          LIBRARY_NAME  icaruscode_TPC_Utilities
 #          LIB_LIBRARIES ${icarus_util_lib_list}
 #

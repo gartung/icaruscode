@@ -2,7 +2,7 @@ add_subdirectory(tools)
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
 
-art_make( 
+art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
           EXCLUDE SimWireICARUS_module.cc 
           MODULE_LIBRARIES larcorealg_Geometry
                            larcore_Geometry_Geometry_service

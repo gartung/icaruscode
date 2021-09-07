@@ -1,6 +1,6 @@
 cet_enable_asserts()
 
-art_make(
+art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
           EXCLUDE
                         PMTconfigurationExtraction_module.cc
                         DumpPMTconfiguration_module.cc

@@ -1,7 +1,7 @@
 add_subdirectory(Algorithms)
 
 # Build the module
-art_make( MODULE_LIBRARIES
+art_make( MODULE_LIBRARIES ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
            icaruscode_TPC_Calorimetry_Algorithms
            larcorealg_Geometry
            larreco_Calorimetry

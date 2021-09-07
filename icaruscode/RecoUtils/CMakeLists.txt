@@ -1,4 +1,4 @@
-art_make(
+art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
              LIB_LIBRARIES larcorealg_Geometry
                            larcore_Geometry_Geometry_service
                            larsim_Simulation lardataobj_Simulation
@@ -35,7 +35,7 @@ install_fhicl()
 install_source()
 
 
-#art_make(
+#art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
 #	  LIB_LIBRARIES larcorealg_Geometry
 #	  	        larcore_Geometry_Geometry_service
 #		        larsim_Simulation nurandom_ParticleNavigation lardataobj_Simulation

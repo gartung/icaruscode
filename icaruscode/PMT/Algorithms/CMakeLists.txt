@@ -1,7 +1,7 @@
 # Leave this out for the time being. One day the grid will be updated enough...
 # cet_set_compiler_flags(EXTRA_CXX_FLAGS -mavx)
 
-art_make(
+art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
   LIB_LIBRARIES 
     larcorealg_Geometry
     lardataobj_RawData

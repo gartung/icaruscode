@@ -1,6 +1,6 @@
 
 
-art_make(   LIB_LIBRARIES
+art_make(   LIB_LIBRARIES ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
                 lardataobj_RawData
                 lardataobj_RecoBase
                 lardata_Utilities

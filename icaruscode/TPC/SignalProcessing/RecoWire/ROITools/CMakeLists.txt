@@ -2,7 +2,7 @@ cet_enable_asserts()
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
 
-art_make( 
+art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
           TOOL_LIBRARIES  larcorealg_Geometry
                           icarus_signal_processing
                           icarus_signal_processing_Detection

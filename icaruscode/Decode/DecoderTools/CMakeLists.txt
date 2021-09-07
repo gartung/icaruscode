@@ -1,12 +1,12 @@
 cet_enable_asserts()
 
-cet_find_library(LIBWDA NAMES wda PATHS ENV LIBWDA_LIB NO_DEFAULT_PATH)
+cet_find_library(LIBWDA NAMES wda PATHS ENV LIBWDA_LIB NO_DEFAULT_PATH) ### MIGRATE-ACTION-RECOMMENDED: use of ENV ... may be UPS-dependent ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
 
-include_directories($ENV{LIBWDA_FQ_DIR}/include)
+include_directories($ENV{LIBWDA_FQ_DIR}/include) ### MIGRATE-ACTION-RECOMMENDED: use target_link_directories() with target semantics
 
 add_subdirectory("Dumpers")
 
-art_make( SUBDIRS details
+art_make( SUBDIRS details ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
           LIB_LIBRARIES
                         icaruscode_Utilities
                         sbnobj_Common_PMT_Data

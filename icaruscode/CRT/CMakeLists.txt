@@ -1,11 +1,11 @@
-include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
-include_directories( $ENV{NURANDOM_INC} )
-include_directories( $ENV{IFDHX_FQ_DIR}/inc )
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR} ) ### MIGRATE-ACTION-RECOMMENDED: use target_link_directories() with target semantics
+include_directories( $ENV{NURANDOM_INC} ) ### MIGRATE-ACTION-RECOMMENDED: use target_link_directories() with target semantics
+include_directories( $ENV{IFDHX_FQ_DIR}/inc ) ### MIGRATE-ACTION-RECOMMENDED: use target_link_directories() with target semantics
 
 add_subdirectory(CRTUtils)
 add_subdirectory(CRTDecoder)
 
-art_make(
+art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
     NO_PLUGINS
     EXCLUDE
         CRTChannelMapAlg.cxx

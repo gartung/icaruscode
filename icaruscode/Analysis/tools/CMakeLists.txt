@@ -3,7 +3,7 @@ add_subdirectory(MCTruth)
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
 
-art_make( TOOL_LIBRARIES lardataobj_RecoBase
+art_make( TOOL_LIBRARIES lardataobj_RecoBase ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
                          lardataobj_Simulation
                          lardataalg_DetectorInfo
                          icaruscode_TPC_SignalProcessing_RawDigitFilter_Algorithms

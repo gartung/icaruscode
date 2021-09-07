@@ -1,6 +1,6 @@
 cet_enable_asserts()
 
-art_make( MODULE_LIBRARIES lardataobj_RecoBase
+art_make( MODULE_LIBRARIES lardataobj_RecoBase ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
                            larcorealg_Geometry
                            larcore_Geometry_Geometry_service
                            lardata_RecoObjects

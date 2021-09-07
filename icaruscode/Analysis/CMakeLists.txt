@@ -1,7 +1,7 @@
 add_subdirectory(tools)
 add_subdirectory(overburden)
 
-art_make( MODULE_LIBRARIES larcorealg_Geometry
+art_make( MODULE_LIBRARIES larcorealg_Geometry ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
                            larcore_Geometry_Geometry_service
                            larsim_Simulation nug4_ParticleNavigation
                            lardataobj_Simulation

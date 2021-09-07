@@ -1,4 +1,4 @@
-art_make( NO_PLUGINS
+art_make( NO_PLUGINS ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
           LIB_LIBRARIES
 	      lardataobj_RecoBase
           lardata_Utilities

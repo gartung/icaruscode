@@ -28,7 +28,7 @@ set( hitfinder_tool_lib_list
 			${ROOT_BASIC_LIB_LIST}
     )
 
-art_make(TOOL_LIBRARIES ${hitfinder_tool_lib_list}
+art_make(TOOL_LIBRARIES ${hitfinder_tool_lib_list} ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
         )
 
 install_headers()

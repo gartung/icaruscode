@@ -2,7 +2,7 @@ add_subdirectory(Algorithms)
 add_subdirectory(Utilities)
 add_subdirectory(scripts)
 
-art_make(
+art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
   EXCLUDE
     "DiscriminatePMTwaveformsByChannel_module.cc"
     "MajorityTriggerSimulation_module.cc"

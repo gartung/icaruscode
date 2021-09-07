@@ -1,5 +1,5 @@
 
-art_make(
+art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
   SERVICE_LIBRARIES
       icarusalg_Geometry
       larcorealg_Geometry

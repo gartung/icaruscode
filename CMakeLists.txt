@@ -11,21 +11,22 @@
 #  make install
 #  make package (builds distribution tarfile)
 # ======================================================================
+cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
+cmake_policy(VERSION 3.18)
 
 
-cmake_minimum_required (VERSION 3.12...3.18 FATAL_ERROR)
 
-project(icaruscode LANGUAGES CXX)
+find_package(cetmodules 2.25.04 REQUIRED)
+project(icaruscode VERSION 09.28.02 LANGUAGES CXX)
 
 message(STATUS
   "\n-- ============================================================================="
   "\n-- === *** Start of configuration of ${PROJECT_NAME} ***"
   "\n-- ===")
 
-# cetbuildtools contains our cmake modules
-find_package(cetbuildtools REQUIRED)
+# cetbuildtools contains our cmake modules ### MIGRATE-ACTION-REQUIRED: remove
 
-list(APPEND CMAKE_MODULE_PATH $ENV{CANVAS_ROOT_IO_DIR}/Modules $ENV{ART_DIR}/Modules )
+list(APPEND CMAKE_MODULE_PATH $ENV{CANVAS_ROOT_IO_DIR}/Modules $ENV{ART_DIR}/Modules ) ### MIGRATE-ACTION-REQUIRED: remove
 
 include(CetCMakeEnv)
 cet_cmake_env()
@@ -36,37 +37,37 @@ cet_set_compiler_flags(DIAGS CAUTIOUS
   EXTRA_FLAGS -pedantic -I $ENV{CLANG_FQ_DIR}/include/c++/v1 
 )
 
-cet_report_compiler_flags()
+cet_report_compiler_flags(REPORT_THRESHOLD VERBOSE)
 
 # these are minimum required versions, not the actual product versions
-find_ups_product( larsoft )
-find_ups_product( libwda )
-find_ups_product( postgresql )
-find_ups_product( eigen )
-find_ups_product( fftw )
-find_ups_product( ifdh_art )
-find_ups_product( guideline_sl )
+find_package( larsoft ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( libwda ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( PostgreSQL ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( Eigen3 ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( fftw ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( ifdh_art ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( guideline_sl ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
 
-find_ups_product( sbnobj )
-find_ups_product( sbncode )
-find_ups_product( icarus_signal_processing )
-find_ups_product( icarusalg )
-find_ups_product( icarusutil )
-find_ups_product( icarus_data )
+find_package( sbnobj ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( sbncode ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( icarus_signal_processing ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( icarusalg ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( icarusutil ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( icarus_data ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
 
-find_ups_product( artdaq_core )
-find_ups_product( sbndaq_artdaq_core )
+find_package( artdaq_core ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+find_package( sbndaq_artdaq_core ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
 
-cet_find_library( PQ NAMES pq PATHS ENV POSTGRESQL_LIBRARIES NO_DEFAULT_PATH )
-cet_find_library( NURANDOM_RANDOMUTILS_NURANDOMSERVICE_SERVICE
+cet_find_library( PQ NAMES pq PATHS ENV POSTGRESQL_LIBRARIES NO_DEFAULT_PATH ) ### MIGRATE-ACTION-RECOMMENDED: use of ENV ... may be UPS-dependent ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+cet_find_library( NURANDOM_RANDOMUTILS_NURANDOMSERVICE_SERVICE ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
                   NAMES nurandom_RandomUtils_NuRandomService_service
-                  PATHS ENV NURANDOM_LIB NO_DEFAULT_PATH )
+                  PATHS ENV NURANDOM_LIB NO_DEFAULT_PATH ) ### MIGRATE-ACTION-RECOMMENDED: use of ENV ... may be UPS-dependent
 
 # deal with fftw
-cet_find_library(ICARUS_FFTW3_LIBRARY  NAMES fftw3  PATHS $ENV{FFTW_LIBRARY} )
-cet_find_library(ICARUS_FFTW3F_LIBRARY NAMES fftw3f PATHS $ENV{FFTW_LIBRARY} )
-cet_find_library(ICARUS_FFTW3L_LIBRARY NAMES fftw3l PATHS $ENV{FFTW_LIBRARY} )
-cet_find_library(ICARUS_FFTW3Q_LIBRARY NAMES fftw3q PATHS $ENV{FFTW_LIBRARY} )
+cet_find_library(ICARUS_FFTW3_LIBRARY  NAMES fftw3  PATHS $ENV{FFTW_LIBRARY} ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+cet_find_library(ICARUS_FFTW3F_LIBRARY NAMES fftw3f PATHS $ENV{FFTW_LIBRARY} ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+cet_find_library(ICARUS_FFTW3L_LIBRARY NAMES fftw3l PATHS $ENV{FFTW_LIBRARY} ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+cet_find_library(ICARUS_FFTW3Q_LIBRARY NAMES fftw3q PATHS $ENV{FFTW_LIBRARY} ) ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
 set(ICARUS_FFTW_LIBRARIES ${ICARUS_FFTW3_LIBRARY} ${ICARUS_FFTW3F_LIBRARY} ${ICARUS_FFTW3L_LIBRARY} ${ICARUS_FFTW3Q_LIBRARY})
 
 # macros for dictionary and simple_plugin
@@ -86,10 +87,8 @@ add_subdirectory(test)
 add_subdirectory(fcl)
 
 # ups - table and config files
-add_subdirectory(ups)
 
 # packaging utility
-include(UseCPack)
 
 message(STATUS
   "\n-- ==="
@@ -98,3 +97,4 @@ message(STATUS
   "\n-- "
   )
 
+cet_cmake_config()
