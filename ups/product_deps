@@ -90,6 +90,7 @@ parent		icaruscode
 defaultqual	e20
 ####################################
 
+<<<<<<< HEAD
 ####################################
 # Directory specifications.
 #
@@ -250,7 +251,7 @@ wpdir	product_dir	wire-cell-cfg
 #
 ####################################
 product				version		qual	flags		<table_format=2>
-fftw				v3_3_8a		-
+fftw				v3_3_9		-
 icarus_data			v09_28_01	-
 icarus_signal_processing	v09_26_01	-
 icarusalg			v09_28_02	-
@@ -259,8 +260,6 @@ libwda				v2_29_1		-
 sbncode				v09_28_02	-
 cetmodules			v2_25_04	-	only_for_build
 end_product_list
-####################################
-
 ####################################
 # Qualifier table.
 #
@@ -319,6 +318,19 @@ e19:debug	e19:debug	e19:debug	e19:debug	e19:debug			-nq-		debug	-nq-
 e19:prof	e19:prof	e19:prof	e19:prof	e19:prof			-nq-		prof	-nq-
 e20:debug	e20:debug	e20:debug	e20:debug	e20:debug			-nq-		debug	-nq-
 e20:prof	e20:prof	e20:prof	e20:prof	e20:prof			-nq-		prof	-nq-
+=======
+# Restore this temporarily...
+# We now define allowed qualifiers and the corresponding qualifiers for the dependencies.
+# Make a table by adding columns before "notes".
+# e15  - with gcc 6.4.0 and -std=c++1y
+qualifier  sbncode    icarusalg    icarusutil   icarus_signal_processing   icarus_data  fftw        libwda notes
+e20:debug  e20:debug  e20:debug    e20:debug    e20:debug                  -nq-         -nq-        -nq-
+e20:prof   e20:prof   e20:prof     e20:prof     e20:prof                   -nq-         -nq-        -nq-
+e19:debug  e19:debug  e19:debug    e19:debug    e19:debug                  -nq-         -nq-        -nq-
+e19:prof   e19:prof   e19:prof     e19:prof     e19:prof                   -nq-         -nq-        -nq-
+c7:debug   c7:debug   c7:debug     c7:debug     c7:debug                   -nq-         -nq-        -nq-
+c7:prof    c7:prof    c7:prof      c7:prof      c7:prof                    -nq-         -nq-        -nq-
+>>>>>>> origin/feature/team_for_art_v3_09
 end_qualifier_list
 ####################################
 

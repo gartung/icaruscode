@@ -1,6 +1,8 @@
 cet_enable_asserts()
 
-art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
+cet_find_library(LIBWDA NAMES wda PATHS ENV LIBWDA_LIB)
+
+art_make(
           EXCLUDE
                         PMTconfigurationExtraction_module.cc
                         DumpPMTconfiguration_module.cc
@@ -11,7 +13,7 @@ art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary
                         icarus_signal_processing_Detection
                         icarus_signal_processing_Filters
                         sbndaq-artdaq-core_Overlays_ICARUS 
-                        artdaq-core_Utilities
+                        artdaq_core::artdaq-core_Utilities
                         larcorealg_Geometry
                         larcore_Geometry_Geometry_service
                         lardata_Utilities
@@ -19,7 +21,7 @@ art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary
                         lardataobj_RawData
                         lardata_ArtDataHelper
                         ${ROOT_BASIC_LIB_LIST}
-                        ${LIBWDA}
+                        LIBWDA
                         ${ART_FRAMEWORK_CORE}
                         ${ART_FRAMEWORK_PRINCIPAL}
                         ${ART_FRAMEWORK_SERVICES_REGISTRY}
@@ -44,7 +46,7 @@ simple_plugin(DaqDecoderICARUSPMT module
   sbndaq-artdaq-core_Overlays_Common
   sbndaq-artdaq-core_Overlays
   lardataobj_RawData
-  artdaq-core_Data
+  artdaq_core::artdaq-core_Data
   ${ART_ROOT_IO_TFILESERVICE_SERVICE}
   ${ART_ROOT_IO_TFILE_SUPPORT}
   ${ART_FRAMEWORK_SERVICES_REGISTRY}
@@ -71,7 +73,7 @@ simple_plugin(DumpPMTconfiguration module
 
 simple_plugin(DumpArtDAQfragments module
   icaruscode_Decode_DecoderTools_Dumpers
-  artdaq-core_Data
+  artdaq_core::artdaq-core_Data
   ${MF_MESSAGELOGGER}
   fhiclcpp
   cetlib_except

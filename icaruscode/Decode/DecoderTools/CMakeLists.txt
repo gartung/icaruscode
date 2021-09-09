@@ -1,6 +1,6 @@
 cet_enable_asserts()
 
-cet_find_library(LIBWDA NAMES wda PATHS ENV LIBWDA_LIB NO_DEFAULT_PATH) ### MIGRATE-ACTION-RECOMMENDED: use of ENV ... may be UPS-dependent ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
+cet_find_library(LIBWDA NAMES wda PATHS ENV LIBWDA_LIB ) ### MIGRATE-ACTION-RECOMMENDED: use of ENV ... may be UPS-dependent ### MIGRATE-ACTION-RECOMMENDED: use cet_find_package() with target semantics for linking
 
 include_directories($ENV{LIBWDA_FQ_DIR}/include) ### MIGRATE-ACTION-RECOMMENDED: use target_link_directories() with target semantics
 
@@ -18,7 +18,7 @@ art_make( SUBDIRS details ### MIGRATE-ACTION-RECOMMENDED: use art_make_library()
                         ROOT::Core
           TOOL_LIBRARIES
                         sbndaq-artdaq-core_Overlays_ICARUS 
-                        artdaq-core_Utilities
+                        artdaq_core::artdaq-core_Utilities
                         icarus_signal_processing
                         icarus_signal_processing_Detection
                         icarus_signal_processing_Filters
@@ -34,7 +34,7 @@ art_make( SUBDIRS details ### MIGRATE-ACTION-RECOMMENDED: use art_make_library()
                         lardataobj_RawData
                         lardata_ArtDataHelper
                         ${ROOT_BASIC_LIB_LIST}
-                        ${LIBWDA}
+                        LIBWDA
                         ${ART_FRAMEWORK_CORE}
                         ${ART_FRAMEWORK_PRINCIPAL}
                         ${ART_FRAMEWORK_SERVICES_REGISTRY}
