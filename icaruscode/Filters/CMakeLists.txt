@@ -1,25 +1,25 @@
-art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
+art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictionary(), simple_plugin() with explicit source lists
           MODULE_LIBRARIES
-                        icarusalg_Utilities
-                        larcorealg_Geometry
-                        larcore_Geometry_Geometry_service
-                        larsim_Simulation 
-                        nug4_ParticleNavigation
-                        lardataobj_Simulation
-                        lardata_Utilities
-                        larevt_Filters
+                        icarusalg::Utilities
+                        larcorealg::Geometry
+                        larcore::Geometry_Geometry_service
+                        larsim::Simulation 
+                        nug4::ParticleNavigation
+                        lardataobj::Simulation
+                        lardata::Utilities
+                        larevt::Filters
                         lardataalg_MCDumpers
-                        lardataobj_RawData
-                        lardataobj_RecoBase
-                        lardata_RecoObjects
-                        nusimdata_SimulationBase
+                        lardataobj::RawData
+                        lardataobj::RecoBase
+                        lardata::RecoObjects
+                        nusimdata::SimulationBase
                         ${ART_FRAMEWORK_CORE}
                         ${ART_FRAMEWORK_PRINCIPAL}
                         ${ART_FRAMEWORK_SERVICES_REGISTRY}
                         ${ROOT_CORE}
-                        art_Persistency_Common 
-                        art_Persistency_Provenance 
-                        art_Utilities 
+                        art::Persistency_Common 
+                        art::Persistency_Provenance 
+                        art::Utilities 
                         ${MF_MESSAGELOGGER}
                         ${MF_UTILITIES}
                         ${FHICLCPP}

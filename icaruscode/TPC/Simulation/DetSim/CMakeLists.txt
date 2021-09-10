@@ -2,28 +2,28 @@ add_subdirectory(tools)
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
 
-art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
+art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictionary(), simple_plugin() with explicit source lists
           EXCLUDE SimWireICARUS_module.cc 
-          MODULE_LIBRARIES larcorealg_Geometry
-                           larcore_Geometry_Geometry_service
-                           larsim_Simulation 
-                           nug4_ParticleNavigation lardataobj_Simulation
-                           lardata_Utilities
-                           larevt_Filters
-                           lardataobj_RawData
-                           icaruscode_TPC_Utilities_SignalShapingICARUSService_service
-		           larevt_CalibrationDBI_Providers
-                           nurandom_RandomUtils_NuRandomService_service
+          MODULE_LIBRARIES larcorealg::Geometry
+                           larcore::Geometry_Geometry_service
+                           larsim::Simulation 
+                           nug4::ParticleNavigation lardataobj::Simulation
+                           lardata::Utilities
+                           larevt::Filters
+                           lardataobj::RawData
+                           icaruscode::TPC_Utilities_SignalShapingICARUSService_service
+		           larevt::CalibrationDBI_Providers
+                           nurandom::RandomUtils_NuRandomService_service
                            ${ART_FRAMEWORK_CORE}
                            ${ART_FRAMEWORK_PRINCIPAL}
                            ${ART_FRAMEWORK_SERVICES_REGISTRY}
                            ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
                            ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
                            ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-                           art_Persistency_Common
-                           art_Persistency_Provenance
-                           art_Utilities
-			   canvas
+                           art::Persistency_Common
+                           art::Persistency_Provenance
+                           art::Utilities
+			   canvas::canvas
                            ${MF_MESSAGELOGGER}
                            ${MF_UTILITIES}
                            ${FHICLCPP}
@@ -36,27 +36,27 @@ art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionar
         )
 
 simple_plugin(SimWireICARUS "module"
-                           larcorealg_Geometry
-                           larcore_Geometry_Geometry_service
-                           larsim_Simulation 
-                           nug4_ParticleNavigation lardataobj_Simulation
-                           lardata_Utilities
+                           larcorealg::Geometry
+                           larcore::Geometry_Geometry_service
+                           larsim::Simulation 
+                           nug4::ParticleNavigation lardataobj::Simulation
+                           lardata::Utilities
                            lardataalg_DetectorInfo
-                           larevt_Filters
-                           lardataobj_RawData
-                           icaruscode_TPC_Utilities_SignalShapingICARUSService_service
-                           larevt_CalibrationDBI_Providers
-                           nurandom_RandomUtils_NuRandomService_service
+                           larevt::Filters
+                           lardataobj::RawData
+                           icaruscode::TPC_Utilities_SignalShapingICARUSService_service
+                           larevt::CalibrationDBI_Providers
+                           nurandom::RandomUtils_NuRandomService_service
                            ${ART_FRAMEWORK_CORE}
                            ${ART_FRAMEWORK_PRINCIPAL}
                            ${ART_FRAMEWORK_SERVICES_REGISTRY}
                            ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
                            ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
                            ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-                           art_Persistency_Common
-                           art_Persistency_Provenance
-                           art_Utilities
-	                   canvas
+                           art::Persistency_Common
+                           art::Persistency_Provenance
+                           art::Utilities
+	                   canvas::canvas
                            ${MF_MESSAGELOGGER}
                            ${MF_UTILITIES}
                            ${FHICLCPP}

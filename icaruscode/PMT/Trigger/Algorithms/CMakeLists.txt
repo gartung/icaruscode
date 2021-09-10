@@ -3,13 +3,13 @@ cet_make( ### MIGRATE-ACTION-RECOMMENDED: use cet_make_library(), build_dictiona
     "details"
   LIBRARIES
     sbnobj_ICARUS_PMT_Trigger_Data
-    icaruscode_PMT_Algorithms
-    lardataalg_DetectorInfo
-    lardataalg_MCDumpers
-    lardataobj_RawData
-    nusimdata_SimulationBase
-    MF_MessageLogger
-    fhiclcpp
+    icaruscode::PMT_Algorithms
+    lardataalg::DetectorInfo
+    lardataalg::MCDumpers
+    lardataobj::RawData
+    nusimdata::SimulationBase
+    messagefacility::MF_MessageLogger
+    fhiclcpp::fhiclcpp
   )
 
 install_headers(SUBDIRS "details")

@@ -1,8 +1,8 @@
 
 art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
   SERVICE_LIBRARIES
-      icarusalg_Geometry
-      larcorealg_Geometry
+      icarusalg::Geometry
+      larcorealg::Geometry
       ${ART_UTILITIES}
       ${MF_MESSAGELOGGER}
       ${FHICLCPP}
@@ -13,8 +13,8 @@ art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary
       ${ROOT_GDML}
       ${ROOT_BASIC_LIB_LIST}
   TOOL_LIBRARIES
-      icarusalg_Geometry
-      larcorealg_Geometry
+      icarusalg::Geometry
+      larcorealg::Geometry
       ${ART_UTILITIES}
       ${MF_UTILITIES}
       ${FHICLCPP}

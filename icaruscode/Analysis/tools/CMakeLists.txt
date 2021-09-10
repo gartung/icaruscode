@@ -3,17 +3,16 @@ add_subdirectory(MCTruth)
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
 
-art_make( TOOL_LIBRARIES lardataobj_RecoBase ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
-                         lardataobj_Simulation
-                         lardataalg_DetectorInfo
-                         icaruscode_TPC_SignalProcessing_RawDigitFilter_Algorithms
-                         larcorealg_Geometry
-                         larcore_Geometry_Geometry_service
-                         lardata_RecoObjects
-                         lardata_Utilities
-                         nusimdata_SimulationBase
-                         larsim_Simulation
-                         nusimdata_SimulationBase
+art_make( TOOL_LIBRARIES lardataobj::RecoBase ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictionary(), simple_plugin() with explicit source lists
+                         lardataobj::Simulation
+                         lardataalg::DetectorInfo
+                         icaruscode::TPC_SignalProcessing_RawDigitFilter_Algorithms
+                         larcorealg::Geometry
+                         larcore::Geometry_Geometry_service
+                         lardata::RecoObjects
+                         lardata::Utilities
+                         nusimdata::SimulationBase
+                         larsim::Simulation
                          ${ART_FRAMEWORK_CORE}
                          ${ART_FRAMEWORK_PRINCIPAL}
                          ${ART_FRAMEWORK_SERVICES_REGISTRY}
@@ -21,15 +20,15 @@ art_make( TOOL_LIBRARIES lardataobj_RecoBase ### MIGRATE-ACTION-RECOMMENDED: use
                          ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
                          ${ART_ROOT_IO_TFILESERVICE_SERVICE}
                          ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
-                         art_Persistency_Common
-                         art_Persistency_Provenance
-                         art_Utilities
-                         canvas
+                         art::Persistency_Common
+                         art::Persistency_Provenance
+                         art::Utilities
+                         canvas::canvas
                          ${MF_MESSAGELOGGER}
                          ${MF_UTILITIES}
                          ${FHICLCPP}
                          ${CETLIB}
-                         cetlib_except
+                         cetlib_except::cetlib_except
                          ${Boost_FILESYSTEM_LIBRARY}
                          ${Boost_SYSTEM_LIBRARY}
                          ${CLHEP}

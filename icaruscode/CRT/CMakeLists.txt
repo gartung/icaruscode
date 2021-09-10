@@ -25,13 +25,13 @@ art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary
     LIBRARY_NAME
         icaruscode_CRTData
     LIB_LIBRARIES
-        larcorealg_Geometry
-        larcore_Geometry_Geometry_service
+        larcorealg::Geometry
+        larcore::Geometry_Geometry_service
         ${ART_FRAMEWORK_CORE}
         ${ART_FRAMEWORK_IO_SOURCES}
         ${ART_FRAMEWORK_PRINCIPAL}
         ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-        canvas
+        canvas::canvas
         ${ART_FRAMEWORK_SERVICES_REGISTRY}
         ${MF_MESSAGELOGGER}
         ${MF_UTILITIES}
@@ -46,9 +46,9 @@ art_make_library(
         icaruscode_CRT
     SOURCE
         CRTChannelMapAlg.cxx
-    LIBRARIES larcorealg_Geometry
-        icaruscode_CRTData
-        cetlib_except
+    LIBRARIES larcorealg::Geometry
+        icaruscode::CRTData
+        cetlib_except::cetlib_except
         ${MF_MESSAGELOGGER}
         ${MF_UTILITIES}
         ${FHICLCPP}
@@ -58,8 +58,8 @@ art_make_library(
 )
 
 simple_plugin(CRTGeometryHelper service
-              larcorealg_Geometry
-              icaruscode_CRT
+              larcorealg::Geometry
+              icaruscode::CRT
               ${ART_ROOT_IO_TFILESERVICE_SERVICE}
               ${ART_FRAMEWORK_SERVICES_REGISTRY}
               ${MF_MESSAGELOGGER}
@@ -68,14 +68,14 @@ simple_plugin(CRTGeometryHelper service
 )
 
 simple_plugin(CRTDetSim module
-              larcorealg_Geometry
-              icaruscode_CRT
-              icaruscode_CRTData
+              larcorealg::Geometry
+              icaruscode::CRT
+              icaruscode::CRTData
               sbnobj_Common_CRT
-              icaruscode_CRTUtils
+              icaruscode::CRTUtils
               ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-              lardataalg_DetectorInfo
-              nurandom_RandomUtils_NuRandomService_service
+              lardataalg::DetectorInfo
+              nurandom::RandomUtils_NuRandomService_service
               ${ART_FRAMEWORK_SERVICES_REGISTRY}
               ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
               ${MF_MESSAGELOGGER}
@@ -85,14 +85,14 @@ simple_plugin(CRTDetSim module
 )
 
 simple_plugin(CRTSimHitProducer module
-              larcorealg_Geometry
-              icaruscode_CRT
-              icaruscode_CRTData
+              larcorealg::Geometry
+              icaruscode::CRT
+              icaruscode::CRTData
               sbnobj_Common_CRT
-              icaruscode_CRTUtils
+              icaruscode::CRTUtils
               ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-              lardataalg_DetectorInfo
-              nurandom_RandomUtils_NuRandomService_service
+              lardataalg::DetectorInfo
+              nurandom::RandomUtils_NuRandomService_service
               ${ART_FRAMEWORK_SERVICES_REGISTRY}
               ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
               ${MF_MESSAGELOGGER}
@@ -102,19 +102,19 @@ simple_plugin(CRTSimHitProducer module
 )
 
 simple_plugin( CRTTrueHitProducer module
-        larcorealg_Geometry
-        icaruscode_CRT
-        icaruscode_CRTData
+        larcorealg::Geometry
+        icaruscode::CRT
+        icaruscode::CRTData
         sbnobj_Common_CRT
-        icaruscode_CRTUtils
+        icaruscode::CRTUtils
         ${ART_FRAMEWORK_CORE}
         ${ART_FRAMEWORK_IO_SOURCES}
         ${ART_FRAMEWORK_PRINCIPAL}
         ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-        art_Persistency_Provenance
-        canvas
-        cetlib_except
-        lardata_DetectorInfoServices_DetectorClocksServiceStandard_service
+        art::Persistency_Provenance
+        canvas::canvas
+        cetlib_except::cetlib_except
+        lardata::DetectorInfoServices_DetectorClocksServiceStandard_service
         ${ART_FRAMEWORK_SERVICES_REGISTRY}
         ${MF_MESSAGELOGGER}
         ${MF_UTILITIES}
@@ -124,13 +124,13 @@ simple_plugin( CRTTrueHitProducer module
 )
 
 simple_plugin(CRTTzeroProducer module
-              larcorealg_Geometry
-              icaruscode_CRT
-              icaruscode_CRTData
+              larcorealg::Geometry
+              icaruscode::CRT
+              icaruscode::CRTData
               sbnobj_Common_CRT
               ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-              lardataalg_DetectorInfo
-              nurandom_RandomUtils_NuRandomService_service
+              lardataalg::DetectorInfo
+              nurandom::RandomUtils_NuRandomService_service
               ${ART_FRAMEWORK_SERVICES_REGISTRY}
               ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
               ${MF_MESSAGELOGGER}
@@ -140,14 +140,14 @@ simple_plugin(CRTTzeroProducer module
 )
 
 simple_plugin(CRTTrackProducer module
-              larcorealg_Geometry
-              icaruscode_CRT
-              icaruscode_CRTData
+              larcorealg::Geometry
+              icaruscode::CRT
+              icaruscode::CRTData
               sbnobj_Common_CRT
-              icaruscode_CRTUtils
+              icaruscode::CRTUtils
               ${ART_ROOT_IO_TFILESERVICE_SERVICE}
               lardataalg_DetectorInfo
-              nurandom_RandomUtils_NuRandomService_service
+              nurandom::RandomUtils_NuRandomService_service
               ${ART_FRAMEWORK_SERVICES_REGISTRY}
               ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
               ${MF_MESSAGELOGGER}
@@ -157,13 +157,13 @@ simple_plugin(CRTTrackProducer module
 )
 
 simple_plugin(CRTSimAnalysis module
-              icaruscode_CRTData
-              icaruscode_CRT
+              icaruscode::CRTData
+              icaruscode::CRT
               sbnobj_Common_CRT
-              icaruscode_CRTUtils
-              larcore_Geometry_Geometry_service
-              larcorealg_Geometry
-              nusimdata_SimulationBase
+              icaruscode::CRTUtils
+              larcore::Geometry_Geometry_service
+              larcorealg::Geometry
+              nusimdata::SimulationBase
               ${ART_FRAMEWORK_SERVICES_REGISTRY}
               ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
               ${ART_ROOT_IO_TFILESERVICE_SERVICE}
@@ -176,13 +176,13 @@ simple_plugin(CRTSimAnalysis module
 )
 
 simple_plugin(CRTDataAnalysis module
-              icaruscode_CRTData
-              icaruscode_CRT
+              icaruscode::CRTData
+              icaruscode::CRT
               sbnobj_Common_CRT
-              icaruscode_CRTUtils
-              larcore_Geometry_Geometry_service
-              larcorealg_Geometry
-              nusimdata_SimulationBase
+              icaruscode::CRTUtils
+              larcore::Geometry_Geometry_service
+              larcorealg::Geometry
+              nusimdata::SimulationBase
               ${ART_FRAMEWORK_SERVICES_REGISTRY}
               ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
               ${ART_ROOT_IO_TFILESERVICE_SERVICE}
@@ -195,31 +195,31 @@ simple_plugin(CRTDataAnalysis module
 )
 
 simple_plugin(CrtOpHitMatchAnalysis module
-              icaruscode_CRTData
-              icaruscode_CRT
+              icaruscode::CRTData
+              icaruscode::CRT
               sbnobj_Common_CRT
-              icaruscode_CRTUtils
-              larcore_Geometry_Geometry_service
-              larcorealg_Geometry
-              nusimdata_SimulationBase
-              lardataobj_RecoBase
+              icaruscode::CRTUtils
+              larcore::Geometry_Geometry_service
+              larcorealg::Geometry
+              nusimdata::SimulationBase
+              lardataobj::RecoBase
               ${ART_FRAMEWORK_SERVICES_REGISTRY}
               ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
               ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-              lardataalg_DetectorInfo
+              lardataalg::DetectorInfo
               ${MF_MESSAGELOGGER}
               ${MF_UTILITIES}
               ${ROOT_BASIC_LIB_LIST}
 )
 
 simple_plugin(CRTTruthMatchAnalysis module
-              icaruscode_CRTData
-              icaruscode_CRT
+              icaruscode::CRTData
+              icaruscode::CRT
               sbnobj_Common_CRT
-              icaruscode_CRTUtils
-              larcore_Geometry_Geometry_service
-              larcorealg_Geometry
-              nusimdata_SimulationBase
+              icaruscode::CRTUtils
+              larcore::Geometry_Geometry_service
+              larcorealg::Geometry
+              nusimdata::SimulationBase
               ${ART_FRAMEWORK_SERVICES_REGISTRY}
               ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
               ${ART_ROOT_IO_TFILESERVICE_SERVICE}
@@ -232,25 +232,25 @@ simple_plugin(CRTTruthMatchAnalysis module
 )
 
 simple_plugin( CRTAutoVeto module
-                        icaruscode_CRTData
-                        icaruscode_CRT
+                        icaruscode::CRTData
+                        icaruscode::CRT
                         sbnobj_Common_CRT
-                        icaruscode_CRTUtils
-                        larcore_Geometry_Geometry_service
-                        larcorealg_Geometry
-                        nusimdata_SimulationBase
+                        icaruscode::CRTUtils
+                        larcore::Geometry_Geometry_service
+                        larcorealg::Geometry
+                        nusimdata::SimulationBase
                         ${ART_FRAMEWORK_CORE}
                         ${ART_FRAMEWORK_PRINCIPAL}
                         ${ART_FRAMEWORK_SERVICES_REGISTRY}
                         ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
                         ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-                        art_Persistency_Common
-                        art_Persistency_Provenance
-                        art_Utilities
-                        canvas
+                        art::Persistency_Common
+                        art::Persistency_Provenance
+                        art::Utilities
+                        canvas::canvas
                         ${MF_MESSAGELOGGER}
                         ${MF_UTILITIES}
-                        cetlib cetlib_except
+                        cetlib::cetlib cetlib_except::cetlib_except
                         ${ROOT_BASIC_LIB_LIST}
                         ${ROOT_GEOM}
                         ${ROOT_XMLIO}
@@ -258,22 +258,22 @@ simple_plugin( CRTAutoVeto module
 )
 
 simple_plugin( FlashResAna module
-                        larcore_Geometry_Geometry_service
-                        larcorealg_Geometry
+                        larcore::Geometry_Geometry_service
+                        larcorealg::Geometry
                         nusimdata_SimulationBase
-                        lardataobj_RecoBase
+                        lardataobj::RecoBase
                         ${ART_FRAMEWORK_CORE}
                         ${ART_FRAMEWORK_PRINCIPAL}
                         ${ART_FRAMEWORK_SERVICES_REGISTRY}
                         ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
                         ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-                        art_Persistency_Common
-                        art_Persistency_Provenance
-                        art_Utilities
-                        canvas
+                        art::Persistency_Common
+                        art::Persistency_Provenance
+                        art::Utilities
+                        canvas::canvas
                         ${MF_MESSAGELOGGER}
                         ${MF_UTILITIES}
-                        cetlib cetlib_except
+                        cetlib::cetlib cetlib_except::cetlib_except
                         ${ROOT_BASIC_LIB_LIST}
                         ${ROOT_GEOM}
                         ${ROOT_XMLIO}
@@ -281,21 +281,21 @@ simple_plugin( FlashResAna module
 )
 
 simple_plugin( PhotBackground module
-                        larcore_Geometry_Geometry_service
-                        larcorealg_Geometry
-                        nusimdata_SimulationBase
-                        icaruscode_CRTData
-                        icaruscode_CRT
+                        larcore::Geometry_Geometry_service
+                        larcorealg::Geometry
+                        nusimdata::SimulationBase
+                        icaruscode::CRTData
+                        icaruscode::CRT
                         sbnobj_Common_CRT
-                        icaruscode_CRTUtils
+                        icaruscode::CRTUtils
                         ${ART_FRAMEWORK_CORE}
                         ${ART_FRAMEWORK_PRINCIPAL}
                         ${ART_FRAMEWORK_SERVICES_REGISTRY}
                         ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
                         ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-                        art_Persistency_Common
-                        art_Persistency_Provenance
-                        art_Utilities
+                        art::Persistency_Common
+                        art::Persistency_Provenance
+                        art::Utilities
                         ${ROOT_BASIC_LIB_LIST}
 )
 

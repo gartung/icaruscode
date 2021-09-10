@@ -1,23 +1,23 @@
 
-art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
-	  MODULE_LIBRARIES larcorealg_Geometry
+art_make( ### MIGRATE-ACTION-RECOMMENDED: use art::make_library(), art::dictionary(), simple_plugin() with explicit source lists
+	  MODULE_LIBRARIES larcorealg::Geometry
 	  		larcore_Geometry_Geometry_service
-			lardataobj_RecoBase
-			lardataobj_Simulation
-			larcoreobj_SummaryData
-			larana_OpticalDetector_OpHitFinder
-			nusimdata_SimulationBase
-			nurandom_RandomUtils_NuRandomService_service
-			larsim_PhotonPropagation_PhotonVisibilityService_service
+			lardataobj::RecoBase
+			lardataobj::Simulation
+			larcoreobj::SummaryData
+			larana::OpticalDetector_OpHitFinder
+			nusimdata::SimulationBase
+			nurandom::RandomUtils_NuRandomService_service
+			larsim::PhotonPropagation_PhotonVisibilityService_service
             ${ART_FRAMEWORK_CORE}
 			${ART_FRAMEWORK_PRINCIPAL}
 			${ART_FRAMEWORK_SERVICES_REGISTRY}
 			${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
 			${ART_ROOT_IO_TFILESERVICE_SERVICE}
-			art_Persistency_Common
-			art_Persistency_Provenance
-			art_Utilities
-			canvas
+			art::Persistency_Common
+			art::Persistency_Provenance
+			art::Utilities
+			canvas::canvas
 			${MF_MESSAGELOGGER}
 			${MF_UTILITIES}
 	        ${FHICLCPP}

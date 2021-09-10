@@ -6,9 +6,9 @@ include_directories($ENV{LIBWDA_FQ_DIR}/include) ### MIGRATE-ACTION-RECOMMENDED:
 
 add_subdirectory("Dumpers")
 
-art_make( SUBDIRS details ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
+art_make( SUBDIRS details ### MIGRATE-ACTION-RECOMMENDED: use art::make_library(), art::dictionary(), simple_plugin() with explicit source lists
           LIB_LIBRARIES
-                        icaruscode_Utilities
+                        icaruscode::Utilities
                         sbnobj_Common_PMT_Data
                         ${MF_MESSAGELOGGER}
                         ${FHICLCPP}
@@ -22,17 +22,17 @@ art_make( SUBDIRS details ### MIGRATE-ACTION-RECOMMENDED: use art_make_library()
                         icarus_signal_processing
                         icarus_signal_processing_Detection
                         icarus_signal_processing_Filters
-                        icaruscode_TPC_Utilities_SignalShapingICARUSService_service
-                        icaruscode_Decode_DecoderTools
-                        icaruscode_Decode_DecoderTools_Dumpers
-                        icaruscode_Utilities
-                        larcorealg_Geometry
-                        larcore_Geometry_Geometry_service
-                        lardata_Utilities
+                        icaruscode::TPC_Utilities_SignalShapingICARUSService_service
+                        icaruscode::Decode_DecoderTools
+                        icaruscode::Decode_DecoderTools_Dumpers
+                        icaruscode::Utilities
+                        larcorealg::Geometry
+                        larcore::Geometry_Geometry_service
+                        lardata::Utilities
                         lardataalg_DetectorInfo
-                        larevt_Filters
-                        lardataobj_RawData
-                        lardata_ArtDataHelper
+                        larevt::Filters
+                        lardataobj::RawData
+                        lardata::ArtDataHelper
                         ${ROOT_BASIC_LIB_LIST}
                         LIBWDA
                         ${ART_FRAMEWORK_CORE}
@@ -41,9 +41,9 @@ art_make( SUBDIRS details ### MIGRATE-ACTION-RECOMMENDED: use art_make_library()
                         ${ART_ROOT_IO_TFILE_SUPPORT}
                         ${ART_ROOT_IO_TFILESERVICE_SERVICE}
                         ${ART_UTILITIES}
-                        art_Persistency_Common canvas
-                        art_Persistency_Provenance canvas
-                        art_Utilities canvas
+                        art::Persistency_Common canvas
+                        art::Persistency_Provenance canvas
+                        art::Utilities canvas
                         ${MF_MESSAGELOGGER}
                         ${MF_UTILITIES}
                         ${FHICLCPP}

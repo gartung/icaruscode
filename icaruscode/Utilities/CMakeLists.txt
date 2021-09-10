@@ -8,10 +8,10 @@ art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary
   LIB_LIBRARIES
     ${ART_ROOT_IO_ROOTDB}
     ${SQLITE3}
-    cetlib_except
-    cetlib
-    fhiclcpp
-    hep_concurrency # required by fhicl::ParameterSetRegistry
+    cetlib_except::cetlib_except
+    cetlib::cetlib
+    fhiclcpp::fhiclcpp
+    hep_concurrency::hep_concurrency # required by fhicl::ParameterSetRegistry
     ROOT::Tree
     ROOT::Core
     ROOT::RIO
@@ -23,9 +23,9 @@ simple_plugin(SaveConfigurationIntoTFile "module"
               ${ART_FRAMEWORK_SERVICES_REGISTRY}
               ${ART_FRAMEWORK_PRINCIPAL}
               ${ART_FRAMEWORK_CORE}
-              canvas
+              canvas::canvas
               ${MF_MESSAGELOGGER}
-              hep_concurrency
+              hep_concurrency::hep_concurrency
               ${FHICLCPP}
               ${CETLIB}
               ${ROOT_CORE}
@@ -33,7 +33,7 @@ simple_plugin(SaveConfigurationIntoTFile "module"
 
 
 simple_plugin(DuplicateEventTracker "service"
-              icaruscode_Utilities
+              icaruscode::Utilities
               ${ART_FRAMEWORK_PRINCIPAL}
               ${MF_MESSAGELOGGER}
 )

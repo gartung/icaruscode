@@ -10,32 +10,32 @@ add_subdirectory(Trigger)
 # cet_set_compiler_flags(EXTRA_CXX_FLAGS -mavx)
 
 simple_plugin(SimPMTIcarus "module"
-  icaruscode_PMT_Algorithms
-  lardataobj_RawData
-  lardataobj_Simulation
-  nurandom_RandomUtils_NuRandomService_service
+  icaruscode::PMT_Algorithms
+  lardataobj::RawData
+  lardataobj::Simulation
+  nurandom::RandomUtils_NuRandomService_service
   ${ART_FRAMEWORK_CORE}
   ${ART_FRAMEWORK_PRINCIPAL}
   ${ART_FRAMEWORK_SERVICES_REGISTRY}
   ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
   ${ART_ROOT_IO_TFILESERVICE_SERVICE}
   ${ART_ROOT_IO_TFILE_SUPPORT}
-  art_Persistency_Provenance
+  art::Persistency_Provenance
   ${CANVAS}
   ${MF_MESSAGELOGGER}
   ${FHICLCPP}
   ${CETLIB}
-  cetlib_except
+  cetlib_except::cetlib_except
   ${ROOT_BASIC_LIB_LIST}
   ${Boost_SYSTEM_LIBRARY}
   )
 
 simple_plugin(PMTWaveformBaselines "module"
-  icaruscode_PMT_Algorithms
+  icaruscode::PMT_Algorithms
   sbnobj_ICARUS_PMT_Data
-  larcore_Geometry_Geometry_service
-  larcorealg_Geometry
-  lardataobj_RawData
+  larcore::Geometry_Geometry_service
+  larcorealg::Geometry
+  lardataobj::RawData
   ${ART_ROOT_IO_TFILESERVICE_SERVICE}
   ${ART_ROOT_IO_TFILE_SUPPORT}
   ${ART_FRAMEWORK_SERVICES_REGISTRY}
@@ -47,9 +47,9 @@ simple_plugin(PMTWaveformBaselines "module"
 simple_plugin(PMTWaveformBaselinesFromReadoutConfiguration "module"
   sbnobj_ICARUS_PMT_Data
   sbnobj_Common_PMT_Data
-  larcore_Geometry_Geometry_service
-  larcorealg_Geometry
-  lardataobj_RawData
+  larcore::Geometry_Geometry_service
+  larcorealg::Geometry
+  lardataobj::RawData
   ${ART_ROOT_IO_TFILESERVICE_SERVICE}
   ${ART_ROOT_IO_TFILE_SUPPORT}
   ${ART_FRAMEWORK_SERVICES_REGISTRY}
@@ -60,20 +60,20 @@ simple_plugin(PMTWaveformBaselinesFromReadoutConfiguration "module"
 
 
 simple_plugin(AsymGaussPulseFunctionTool "tool"
-  icaruscode_PMT_Algorithms
+  icaruscode::PMT_Algorithms
   )
 
 simple_plugin(AsymExpPulseFunctionTool "tool"
-  icaruscode_PMT_Algorithms
+  icaruscode::PMT_Algorithms
   )
 
 simple_plugin(CustomPulseFunctionTool "tool"
-  icaruscode_PMT_Algorithms
+  icaruscode::PMT_Algorithms
   ROOT::Hist
   )
 
 
-art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
+art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictionary(), simple_plugin() with explicit source lists
   EXCLUDE
     "SimPMTIcarus_module.cc"
     "PMTWaveformBaselines_module.cc"
@@ -82,39 +82,39 @@ art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary
     "AsymExpPulseFunctionTool_tool.cc"
     "CustomPulseFunctionTool_tool.cc"
           LIB_LIBRARIES 
-            lardataobj_RawData
-            lardataobj_RecoBase
-            lardata_Utilities
+            lardataobj::RawData
+            lardataobj::RecoBase
+            lardata::Utilities
             ${FHICLCPP}
 			${CETLIB}
 			${ROOT_BASIC_LIB_LIST}
 			${Boost_SYSTEM_LIBRARY}
-	        MODULE_LIBRARIES larcorealg_Geometry
-	  		larcore_Geometry_Geometry_service
-	        lardata_Utilities
-			larevt_Filters
-			lardataobj_RawData
-			larevt_CalibrationDBI_IOVData
-			larevt_CalibrationDBI_Providers
-			lardataobj_RecoBase
-			lardata_ArtDataHelper
-			nusimdata_SimulationBase
-            nurandom_RandomUtils_NuRandomService_service
+	        MODULE_LIBRARIES larcorealg::Geometry
+	  		larcore::Geometry_Geometry_service
+	        lardata::Utilities
+			larevt::Filters
+			lardataobj::RawData
+			larevt::CalibrationDBI_IOVData
+			larevt::CalibrationDBI_Providers
+			lardataobj::RecoBase
+			lardata::ArtDataHelper
+			nusimdata::SimulationBase
+            nurandom::RandomUtils_NuRandomService_service
 			${CLHEP}
             ${ART_FRAMEWORK_CORE}
 			${ART_FRAMEWORK_PRINCIPAL}
 			${ART_FRAMEWORK_SERVICES_REGISTRY}
 			${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
 			${ART_ROOT_IO_TFILESERVICE_SERVICE}
-			art_Persistency_Common
-			art_Persistency_Provenance
-			art_Utilities
-			canvas
+			art::Persistency_Common
+			art::Persistency_Provenance
+			art::Utilities
+			canvas::canvas
 			${MF_MESSAGELOGGER}
 			${MF_UTILITIES}
 	        ${FHICLCPP}
 			${CETLIB}
-			cetlib_except
+			cetlib_except::cetlib_except
             ${ROOT_GEOM}
             ${ROOT_XMLIO}
             ${ROOT_GDML}

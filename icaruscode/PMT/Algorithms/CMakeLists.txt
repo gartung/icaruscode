@@ -3,20 +3,20 @@
 
 art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
   LIB_LIBRARIES 
-    larcorealg_Geometry
-    lardataobj_RawData
-    icarusalg_Utilities
-#    lardataobj_RecoBase
-#    lardata_Utilities
-#    larcorealg_Geometry
-#    lardata_ArtDataHelper
-#    nusimdata_SimulationBase
-     canvas
+    larcorealg::Geometry
+    lardataobj::RawData
+    icarusalg::Utilities
+#    lardataobj::RecoBase
+#    lardata::Utilities
+#    larcorealg::Geometry
+#    lardata::ArtDataHelper
+#    nusimdata::SimulationBase
+     canvas::canvas
      ${MF_MESSAGELOGGER}
      ${MF_UTILITIES}
      ${FHICLCPP}
      ${CETLIB}
-     cetlib_except
+     cetlib_except::cetlib_except
      ${ROOT_FFTW}
      ${ROOT_GENVECTOR}
      ${ROOT_BASIC_LIB_LIST}

@@ -13,14 +13,14 @@ art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary
     "SlidingWindowTriggerEfficiencyPlots_module.cc"
     "MakeTriggerSimulationTree_module.cc"
   LIB_LIBRARIES
-    icaruscode_PMT_Trigger_Algorithms
-    icaruscode_PMT_Trigger_Utilities
+    icaruscode::PMT_Trigger_Algorithms
+    icaruscode::PMT_Trigger_Utilities
     sbnobj_ICARUS_PMT_Trigger_Data
-    larcore_Geometry_Geometry_service
-    lardataalg_MCDumpers
-    larcorealg_Geometry
-    lardataobj_RawData
-    nusimdata_SimulationBase
+    larcore::Geometry_Geometry_service
+    lardataalg::MCDumpers
+    larcorealg::Geometry
+    lardataobj::RawData
+    nusimdata::SimulationBase
     ${ART_ROOT_IO_TFILESERVICE_SERVICE}
     ${ART_ROOT_IO_TFILE_SUPPORT}
     ${ART_FRAMEWORK_SERVICES_REGISTRY}
@@ -37,32 +37,32 @@ art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary
     ROOT::Tree
     ROOT::Core
   MODULE_LIBRARIES
-    icaruscode_PMT_Trigger_Algorithms
+    icaruscode::PMT_Trigger_Algorithms
     sbnobj_ICARUS_PMT_Trigger_Data
-    lardataalg_DetectorInfo
-    lardataobj_RawData
+    lardataalg::DetectorInfo
+    lardataobj::RawData
     ${ART_FRAMEWORK_SERVICES_REGISTRY}
     ${MF_MESSAGELOGGER}
     ${FHICLCPP}
     ROOT::Core
     ROOT::Physics
   TOOL_LIBRARIES
-    icaruscode_PMT_Trigger_Algorithms
+    icaruscode::PMT_Trigger_Algorithms
     sbnobj_ICARUS_PMT_Trigger_Data
-    lardataalg_DetectorInfo
-    lardataobj_RawData
+    lardataalg::DetectorInfo
+    lardataobj::RawData
     ${MF_MESSAGELOGGER}
     ${FHICLCPP}
   )
 
 simple_plugin(DiscriminatePMTwaveformsByChannel module
-  icaruscode_PMT_Trigger_Algorithms
+  icaruscode::PMT_Trigger_Algorithms
   sbnobj_ICARUS_PMT_Trigger_Data
   sbnobj_ICARUS_PMT_Data
   sbnobj_Common_PMT_Data
-  icaruscode_PMT_Trigger_Utilities
-  icaruscode_PMT_Algorithms
-  lardataobj_RawData
+  icaruscode::PMT_Trigger_Utilities
+  icaruscode::PMT_Algorithms
+  lardataobj::RawData
   ${ART_FRAMEWORK_SERVICES_REGISTRY}
   ${ART_FRAMEWORK_PRINCIPAL}
   ${ART_FRAMEWORK_CORE}
@@ -74,13 +74,13 @@ simple_plugin(DiscriminatePMTwaveformsByChannel module
   )
 
 simple_plugin(SlidingWindowTrigger module
-  icaruscode_PMT_Trigger_Algorithms
+  icaruscode::PMT_Trigger_Algorithms
   sbnobj_ICARUS_PMT_Trigger_Data
-  icaruscode_PMT_Trigger_Utilities
-  icaruscode_PMT_Algorithms
-  larcore_Geometry_Geometry_service
-  larcorealg_Geometry
-  lardataobj_RawData
+  icaruscode::PMT_Trigger_Utilities
+  icaruscode::PMT_Algorithms
+  larcore::Geometry_Geometry_service
+  larcorealg::Geometry
+  lardataobj::RawData
   ${ART_FRAMEWORK_SERVICES_REGISTRY}
   ${ART_FRAMEWORK_PRINCIPAL}
   ${ART_FRAMEWORK_CORE}
@@ -92,12 +92,12 @@ simple_plugin(SlidingWindowTrigger module
   )
 
 simple_plugin(MajorityTriggerSimulation module
-  icaruscode_PMT_Trigger_Algorithms
+  icaruscode::PMT_Trigger_Algorithms
   sbnobj_ICARUS_PMT_Trigger_Data
-  icaruscode_PMT_Trigger_Utilities
-  larcore_Geometry_Geometry_service
-  larcorealg_Geometry
-  lardataobj_RawData
+  icaruscode::PMT_Trigger_Utilities
+  larcore::Geometry_Geometry_service
+  larcorealg::Geometry
+  lardataobj::RawData
   ${ART_ROOT_IO_TFILESERVICE_SERVICE}
   ${ART_ROOT_IO_TFILE_SUPPORT}
   ${ART_FRAMEWORK_SERVICES_REGISTRY}
@@ -112,12 +112,12 @@ simple_plugin(MajorityTriggerSimulation module
   )
 
 simple_plugin(SlidingWindowTriggerSimulation module
-  icaruscode_PMT_Trigger_Algorithms
+  icaruscode::PMT_Trigger_Algorithms
   sbnobj_ICARUS_PMT_Trigger_Data
-  icaruscode_PMT_Trigger_Utilities
-  larcore_Geometry_Geometry_service
-  larcorealg_Geometry
-  lardataobj_RawData
+  icaruscode::PMT_Trigger_Utilities
+  larcore::Geometry_Geometry_service
+  larcorealg::Geometry
+  lardataobj::RawData
   ${ART_ROOT_IO_TFILESERVICE_SERVICE}
   ${ART_ROOT_IO_TFILE_SUPPORT}
   ${ART_FRAMEWORK_SERVICES_REGISTRY}
@@ -132,13 +132,13 @@ simple_plugin(SlidingWindowTriggerSimulation module
   )
 
 simple_plugin(TriggerEfficiencyPlots module
-  icaruscode_PMT_Trigger_Utilities
+  icaruscode::PMT_Trigger_Utilities
   sbnobj_ICARUS_PMT_Trigger_Data
-  larcore_Geometry_Geometry_service
-  lardataalg_MCDumpers
-  larcorealg_Geometry
-  lardataobj_RawData
-  nusimdata_SimulationBase
+  larcore::Geometry_Geometry_service
+  lardataalg::MCDumpers
+  larcorealg::Geometry
+  lardataobj::RawData
+  nusimdata::SimulationBase
   ${ART_ROOT_IO_TFILESERVICE_SERVICE}
   ${ART_ROOT_IO_TFILE_SUPPORT}
   ${ART_FRAMEWORK_SERVICES_REGISTRY}
@@ -155,13 +155,13 @@ simple_plugin(TriggerEfficiencyPlots module
   )
 
 simple_plugin(MakeTriggerSimulationTree module
-  icaruscode_PMT_Trigger_Algorithms
-  icaruscode_PMT_Trigger_Utilities
+  icaruscode::PMT_Trigger_Algorithms
+  icaruscode::PMT_Trigger_Utilities
   sbnobj_ICARUS_PMT_Trigger_Data
-  larcore_Geometry_Geometry_service
-  lardataalg_MCDumpers
-  larcorealg_Geometry
-  nusimdata_SimulationBase
+  larcore::Geometry_Geometry_service
+  lardataalg::MCDumpers
+  larcorealg::Geometry
+  nusimdata::SimulationBase
   ${ART_ROOT_IO_TFILESERVICE_SERVICE}
   ${ART_ROOT_IO_TFILE_SUPPORT}
   ${ART_FRAMEWORK_SERVICES_REGISTRY}
@@ -183,15 +183,15 @@ foreach(TriggerEfficiencyPlotsModule
 )
 
   simple_plugin(${TriggerEfficiencyPlotsModule} module
-    icaruscode_PMT_Trigger_Algorithms
-    icaruscode_PMT_Trigger
-    icaruscode_PMT_Trigger_Utilities
+    icaruscode::PMT_Trigger_Algorithms
+    icaruscode::PMT_Trigger
+    icaruscode::PMT_Trigger_Utilities
     sbnobj_ICARUS_PMT_Trigger_Data
-    larcore_Geometry_Geometry_service
-    lardataalg_MCDumpers
-    larcorealg_Geometry
-    lardataobj_RawData
-    nusimdata_SimulationBase
+    larcore::Geometry_Geometry_service
+    lardataalg::MCDumpers
+    larcorealg::Geometry
+    lardataobj::RawData
+    nusimdata::SimulationBase
     ${ART_ROOT_IO_TFILESERVICE_SERVICE}
     ${ART_ROOT_IO_TFILE_SUPPORT}
     ${ART_FRAMEWORK_SERVICES_REGISTRY}

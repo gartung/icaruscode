@@ -1,15 +1,15 @@
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR} ) ### MIGRATE-ACTION-RECOMMENDED: use target_link_directories() with target semantics
 
-art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
+art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictionary(), simple_plugin() with explicit source lists
 	  LIB_LIBRARIES
-		   icarusalg_Geometry
-		   larcore_Geometry_Geometry_service
-		   larcorealg_Geometry
-		   lardataobj_RecoBase
+		   icarusalg::Geometry
+		   larcore::Geometry_Geometry_service
+		   larcorealg::Geometry
+		   lardataobj::RecoBase
 		   ${LARDATA_LIB}
-		   canvas
-		   cetlib
-		   cetlib_except
+		   canvas::canvas
+		   cetlib::cetlib
+		   cetlib_except::cetlib_except
 		   ${ART_FRAMEWORK_ART}
 		   ${ART_FRAMEWORK_CORE}
 		   ${ART_FRAMEWORK_PRINCIPAL}
@@ -18,9 +18,9 @@ art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionar
 		   ${ART_FRAMEWORK_SERVICES_REGISTRY}
 		   ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
 		   ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-		   art_Persistency_Common
-		   art_Persistency_Provenance
-		   art_Utilities
+		   art::Persistency_Common
+		   art::Persistency_Provenance
+		   art::Utilities
 		   ${MF_MESSAGELOGGER}
 		   ${FHICLCPP}
 		   ${ROOT_GEOM}
@@ -28,15 +28,15 @@ art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionar
 		   ${ROOT_GDML}
 		   ${ROOT_BASIC_LIB_LIST}
           MODULE_LIBRARIES
-		   icaruscode_PMT_OpReco_FlashFinder
-		   icarusalg_Geometry
-		   larcore_Geometry_Geometry_service
-		   larcorealg_Geometry
-		   lardataobj_RecoBase
+		   icaruscode::PMT_OpReco_FlashFinder
+		   icarusalg::Geometry
+		   larcore::Geometry_Geometry_service
+		   larcorealg::Geometry
+		   lardataobj::RecoBase
 		   ${LARDATA_LIB}
 		   canvas
-		   cetlib
-		   cetlib_except
+		   cetlib::cetlib
+		   cetlib_except::cetlib_except
 		   ${ART_FRAMEWORK_ART}
 		   ${ART_FRAMEWORK_CORE}
 		   ${ART_FRAMEWORK_PRINCIPAL}
@@ -44,9 +44,9 @@ art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionar
 		   ${ART_FRAMEWORK_SERVICES_REGISTRY}
 		   ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
 		   ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-		   art_Persistency_Common
-		   art_Persistency_Provenance
-		   art_Utilities
+		   art::Persistency_Common
+		   art::Persistency_Provenance
+		   art::Utilities
 		   ${MF_MESSAGELOGGER}
 		   ${FHICLCPP}
 		   ${ROOT_GEOM}

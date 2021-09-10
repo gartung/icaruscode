@@ -1,19 +1,19 @@
 simple_plugin(SpaceChargeServiceICARUS "service"
-	icaruscode_TPC_Simulation_SpaceCharge
-	lardataalg_DetectorInfo
+	icaruscode::TPC_Simulation_SpaceCharge
+	lardataalg::DetectorInfo
 	${ART_FRAMEWORK_CORE}
 	${ART_FRAMEWORK_PRINCIPAL}
 	${ART_FRAMEWORK_SERVICES_REGISTRY}
-	art_Persistency_Common canvas
-	art_Persistency_Provenance canvas
+	art::Persistency_Common canvas
+	art::Persistency_Provenance canvas
 	${ART_FRAMEWORK_SERVICES_BASIC}
 	${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
 	${ART_ROOT_IO_TFILESERVICE_SERVICE}
 	${ART_FRAMEWORK_SERVICES_SYSTEM_FILECATALOGMETADATA_SERVICE}
-	art_Utilities canvas
+	art::Utilities canvas::canvas
 	${MF_MESSAGELOGGER}
 										      
-  	cetlib cetlib_except
+  	cetlib::cetlib cetlib_except::cetlib_except
    	${ROOT_BASIC_LIB_LIST}
 )
 install_headers()

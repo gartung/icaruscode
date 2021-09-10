@@ -1,26 +1,26 @@
-art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
-          MODULE_LIBRARIES larcorealg_Geometry
-                           larcore_Geometry_Geometry_service
-                           larsim_Simulation lardataobj_Simulation
-                           larsim_MCCheater_BackTrackerService_service
-                           larsim_MCCheater_ParticleInventoryService_service
-                           lardata_Utilities
-                           larevt_Filters
-                           lardataobj_RawData
-                           lardataobj_RecoBase
-                           lardataobj_MCBase
+art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictionary(), simple_plugin() with explicit source lists
+          MODULE_LIBRARIES larcorealg::Geometry
+                           larcore::Geometry_Geometry_service
+                           larsim::Simulation lardataobj::Simulation
+                           larsim::MCCheater_BackTrackerService_service
+                           larsim::MCCheater_ParticleInventoryService_service
+                           lardata::Utilities
+                           larevt::Filters
+                           lardataobj::RawData
+                           lardataobj::RecoBase
+                           lardataobj::MCBase
                            larreco_RecoAlg
-                           lardata_RecoObjects  
-                           larpandora_LArPandoraInterface
-                           nusimdata_SimulationBase
+                           lardata::RecoObjects  
+                           larpandora::LArPandoraInterface
+                           nusimdata::SimulationBase
                            ${ART_FRAMEWORK_CORE}
                            ${ART_FRAMEWORK_PRINCIPAL}
                            ${ART_FRAMEWORK_SERVICES_REGISTRY}
                            ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
                            ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-                           art_Persistency_Common canvas
-                           art_Persistency_Provenance canvas
-                           art_Utilities canvas
+                           art::Persistency_Common canvas
+                           art::Persistency_Provenance canvas
+                           art::Utilities canvas
                            ${MF_MESSAGELOGGER}
                            
                            ${FHICLCPP}
@@ -28,7 +28,7 @@ art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary
                            ${ROOT_XMLIO}
                            ${ROOT_GDML}
                            ${ROOT_BASIC_LIB_LIST}
-                           icaruscode_RecoUtils
+                           icaruscode::RecoUtils
         )
 
 # install_headers()

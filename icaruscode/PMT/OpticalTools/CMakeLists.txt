@@ -1,31 +1,31 @@
 cet_enable_asserts()
 
-art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
-          TOOL_LIBRARIES  icaruscode_TPC_Utilities_SignalShapingICARUSService_service
-                          larcorealg_Geometry
+art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictionary(), simple_plugin() with explicit source lists
+          TOOL_LIBRARIES  icaruscode::TPC_Utilities_SignalShapingICARUSService_service
+                          larcorealg::Geometry
                           larevt_CalibrationDBI_IOVData
                           larevt_CalibrationDBI_Providers
-			              lardataobj_RecoBase
-			              larcore_Geometry_Geometry_service
-			              lardata_Utilities
-			              nurandom_RandomUtils_NuRandomService_service
+			              lardataobj::RecoBase
+			              larcore::Geometry_Geometry_service
+			              lardata::Utilities
+			              nurandom::RandomUtils_NuRandomService_service
   			              ${ART_FRAMEWORK_CORE}
 			              ${ART_FRAMEWORK_PRINCIPAL}
 			              ${ART_FRAMEWORK_SERVICES_REGISTRY}
-			              art_Persistency_Common
-			              art_Persistency_Provenance
+			              art::Persistency_Common
+			              art::Persistency_Provenance
 			              ${ART_FRAMEWORK_SERVICES_BASIC}
 			              ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
                           ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
 			              ${ART_ROOT_IO_TFILESERVICE_SERVICE}
 			              ${ART_FRAMEWORK_SERVICES_SYSTEM_FILECATALOGMETADATA_SERVICE}
-			              art_Utilities
-			              canvas
+			              art::Utilities
+			              canvas::canvas
 			              ${MF_MESSAGELOGGER}
 			              ${MF_UTILITIES}
 			              ${FHICLCPP}
 			              ${CETLIB}
-			              cetlib_except
+			              cetlib_except::cetlib_except
 			              ${Boost_FILESYSTEM_LIBRARY}
 			              ${Boost_SYSTEM_LIBRARY}
                           ${CLHEP}
