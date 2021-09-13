@@ -27,18 +27,18 @@ art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary
     LIB_LIBRARIES
         larcorealg::Geometry
         larcore::Geometry_Geometry_service
-        ${ART_FRAMEWORK_CORE}
-        ${ART_FRAMEWORK_IO_SOURCES}
-        ${ART_FRAMEWORK_PRINCIPAL}
-        ${ART_ROOT_IO_TFILESERVICE_SERVICE}
+        art::Framework_Core
+        art::Framework_IO_Sources
+        art::Framework_Principal
+        art_root_io::TFileService_service
         canvas::canvas
-        ${ART_FRAMEWORK_SERVICES_REGISTRY}
-        ${MF_MESSAGELOGGER}
-        ${MF_UTILITIES}
-        ${FHICLCPP}
-        ${ROOT_BASIC_LIB_LIST}
-        ${ROOT_GEOM}
-        ${CETLIB}
+        art::Framework_Services_Registry
+        messagefacility::MF_MessageLogger
+        messagefacility::headers
+        fhiclcpp::fhiclcpp
+        ${ROOT_LIBRARIES}
+        ROOT::Geom
+        cetlib::cetlib
 )
 
 art_make_library(
@@ -49,22 +49,22 @@ art_make_library(
     LIBRARIES larcorealg::Geometry
         icaruscode::CRTData
         cetlib_except::cetlib_except
-        ${MF_MESSAGELOGGER}
-        ${MF_UTILITIES}
-        ${FHICLCPP}
-        ${ROOT_BASIC_LIB_LIST}
-        ${ROOT_GEOM}
-        ${CETLIB}
+        messagefacility::MF_MessageLogger
+        messagefacility::headers
+        fhiclcpp::fhiclcpp
+        ${ROOT_LIBRARIES}
+        ROOT::Geom
+        cetlib::cetlib
 )
 
 simple_plugin(CRTGeometryHelper service
               larcorealg::Geometry
               icaruscode::CRT
-              ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-              ${ART_FRAMEWORK_SERVICES_REGISTRY}
-              ${MF_MESSAGELOGGER}
-              ${MF_UTILITIES}
-              ${ROOT_BASIC_LIB_LIST}
+              art_root_io::TFileService_service
+              art::Framework_Services_Registry
+              messagefacility::MF_MessageLogger
+              messagefacility::headers
+              ${ROOT_LIBRARIES}
 )
 
 simple_plugin(CRTDetSim module
@@ -73,15 +73,15 @@ simple_plugin(CRTDetSim module
               icaruscode::CRTData
               sbnobj_Common_CRT
               icaruscode::CRTUtils
-              ${ART_ROOT_IO_TFILESERVICE_SERVICE}
+              art_root_io::TFileService_service
               lardataalg::DetectorInfo
               nurandom::RandomUtils_NuRandomService_service
-              ${ART_FRAMEWORK_SERVICES_REGISTRY}
-              ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
-              ${MF_MESSAGELOGGER}
-              ${MF_UTILITIES}
-              ${ROOT_BASIC_LIB_LIST}
-              ${CLHEP}
+              art::Framework_Services_Registry
+              art::Framework_Services_Optional_RandomNumberGenerator_service
+              messagefacility::MF_MessageLogger
+              messagefacility::headers
+              ${ROOT_LIBRARIES}
+              CLHEP::CLHEP
 )
 
 simple_plugin(CRTSimHitProducer module
@@ -90,15 +90,15 @@ simple_plugin(CRTSimHitProducer module
               icaruscode::CRTData
               sbnobj_Common_CRT
               icaruscode::CRTUtils
-              ${ART_ROOT_IO_TFILESERVICE_SERVICE}
+              art_root_io::TFileService_service
               lardataalg::DetectorInfo
               nurandom::RandomUtils_NuRandomService_service
-              ${ART_FRAMEWORK_SERVICES_REGISTRY}
-              ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
-              ${MF_MESSAGELOGGER}
-              ${MF_UTILITIES}
-              ${ROOT_BASIC_LIB_LIST}
-              ${CLHEP}
+              art::Framework_Services_Registry
+              art::Framework_Services_Optional_RandomNumberGenerator_service
+              messagefacility::MF_MessageLogger
+              messagefacility::headers
+              ${ROOT_LIBRARIES}
+              CLHEP::CLHEP
 )
 
 simple_plugin( CRTTrueHitProducer module
@@ -107,20 +107,20 @@ simple_plugin( CRTTrueHitProducer module
         icaruscode::CRTData
         sbnobj_Common_CRT
         icaruscode::CRTUtils
-        ${ART_FRAMEWORK_CORE}
-        ${ART_FRAMEWORK_IO_SOURCES}
-        ${ART_FRAMEWORK_PRINCIPAL}
-        ${ART_ROOT_IO_TFILESERVICE_SERVICE}
+        art::Framework_Core
+        art::Framework_IO_Sources
+        art::Framework_Principal
+        art_root_io::TFileService_service
         art::Persistency_Provenance
         canvas::canvas
         cetlib_except::cetlib_except
         lardata::DetectorInfoServices_DetectorClocksServiceStandard_service
-        ${ART_FRAMEWORK_SERVICES_REGISTRY}
-        ${MF_MESSAGELOGGER}
-        ${MF_UTILITIES}
-        ${ROOT_BASIC_LIB_LIST}
-        ${CLHEP}
-        ${CETLIB}
+        art::Framework_Services_Registry
+        messagefacility::MF_MessageLogger
+        messagefacility::headers
+        ${ROOT_LIBRARIES}
+        CLHEP::CLHEP
+        cetlib::cetlib
 )
 
 simple_plugin(CRTTzeroProducer module
@@ -128,15 +128,15 @@ simple_plugin(CRTTzeroProducer module
               icaruscode::CRT
               icaruscode::CRTData
               sbnobj_Common_CRT
-              ${ART_ROOT_IO_TFILESERVICE_SERVICE}
+              art_root_io::TFileService_service
               lardataalg::DetectorInfo
               nurandom::RandomUtils_NuRandomService_service
-              ${ART_FRAMEWORK_SERVICES_REGISTRY}
-              ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
-              ${MF_MESSAGELOGGER}
-              ${MF_UTILITIES}
-              ${ROOT_BASIC_LIB_LIST}
-              ${CLHEP}
+              art::Framework_Services_Registry
+              art::Framework_Services_Optional_RandomNumberGenerator_service
+              messagefacility::MF_MessageLogger
+              messagefacility::headers
+              ${ROOT_LIBRARIES}
+              CLHEP::CLHEP
 )
 
 simple_plugin(CRTTrackProducer module
@@ -145,15 +145,15 @@ simple_plugin(CRTTrackProducer module
               icaruscode::CRTData
               sbnobj_Common_CRT
               icaruscode::CRTUtils
-              ${ART_ROOT_IO_TFILESERVICE_SERVICE}
+              art_root_io::TFileService_service
               lardataalg_DetectorInfo
               nurandom::RandomUtils_NuRandomService_service
-              ${ART_FRAMEWORK_SERVICES_REGISTRY}
-              ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
-              ${MF_MESSAGELOGGER}
-              ${MF_UTILITIES}
-              ${ROOT_BASIC_LIB_LIST}
-              ${CLHEP}
+              art::Framework_Services_Registry
+              art::Framework_Services_Optional_RandomNumberGenerator_service
+              messagefacility::MF_MessageLogger
+              messagefacility::headers
+              ${ROOT_LIBRARIES}
+              CLHEP::CLHEP
 )
 
 simple_plugin(CRTSimAnalysis module
@@ -164,15 +164,15 @@ simple_plugin(CRTSimAnalysis module
               larcore::Geometry_Geometry_service
               larcorealg::Geometry
               nusimdata::SimulationBase
-              ${ART_FRAMEWORK_SERVICES_REGISTRY}
-              ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-              ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-              ${MF_MESSAGELOGGER}
-              ${MF_UTILITIES}
-              ${ROOT_BASIC_LIB_LIST}
-              ${ROOT_GEOM}
-              ${ROOT_XMLIO}
-              ${ROOT_GDML}
+              art::Framework_Services_Registry
+              art_root_io::tfile_support ROOT::Core
+              art_root_io::TFileService_service
+              messagefacility::MF_MessageLogger
+              messagefacility::headers
+              ${ROOT_LIBRARIES}
+              ROOT::Geom
+              ROOT::XMLIO
+              ROOT::Gdml
 )
 
 simple_plugin(CRTDataAnalysis module
@@ -183,15 +183,15 @@ simple_plugin(CRTDataAnalysis module
               larcore::Geometry_Geometry_service
               larcorealg::Geometry
               nusimdata::SimulationBase
-              ${ART_FRAMEWORK_SERVICES_REGISTRY}
-              ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-              ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-              ${MF_MESSAGELOGGER}
-              ${MF_UTILITIES}
-              ${ROOT_BASIC_LIB_LIST}
-              ${ROOT_GEOM}
-              ${ROOT_XMLIO}
-              ${ROOT_GDML}
+              art::Framework_Services_Registry
+              art_root_io::tfile_support ROOT::Core
+              art_root_io::TFileService_service
+              messagefacility::MF_MessageLogger
+              messagefacility::headers
+              ${ROOT_LIBRARIES}
+              ROOT::Geom
+              ROOT::XMLIO
+              ROOT::Gdml
 )
 
 simple_plugin(CrtOpHitMatchAnalysis module
@@ -203,13 +203,13 @@ simple_plugin(CrtOpHitMatchAnalysis module
               larcorealg::Geometry
               nusimdata::SimulationBase
               lardataobj::RecoBase
-              ${ART_FRAMEWORK_SERVICES_REGISTRY}
-              ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-              ${ART_ROOT_IO_TFILESERVICE_SERVICE}
+              art::Framework_Services_Registry
+              art_root_io::tfile_support ROOT::Core
+              art_root_io::TFileService_service
               lardataalg::DetectorInfo
-              ${MF_MESSAGELOGGER}
-              ${MF_UTILITIES}
-              ${ROOT_BASIC_LIB_LIST}
+              messagefacility::MF_MessageLogger
+              messagefacility::headers
+              ${ROOT_LIBRARIES}
 )
 
 simple_plugin(CRTTruthMatchAnalysis module
@@ -220,15 +220,15 @@ simple_plugin(CRTTruthMatchAnalysis module
               larcore::Geometry_Geometry_service
               larcorealg::Geometry
               nusimdata::SimulationBase
-              ${ART_FRAMEWORK_SERVICES_REGISTRY}
-              ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-              ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-              ${MF_MESSAGELOGGER}
-              ${MF_UTILITIES}
-              ${ROOT_BASIC_LIB_LIST}
-              ${ROOT_GEOM}
-              ${ROOT_XMLIO}
-              ${ROOT_GDML}
+              art::Framework_Services_Registry
+              art_root_io::tfile_support ROOT::Core
+              art_root_io::TFileService_service
+              messagefacility::MF_MessageLogger
+              messagefacility::headers
+              ${ROOT_LIBRARIES}
+              ROOT::Geom
+              ROOT::XMLIO
+              ROOT::Gdml
 )
 
 simple_plugin( CRTAutoVeto module
@@ -239,22 +239,22 @@ simple_plugin( CRTAutoVeto module
                         larcore::Geometry_Geometry_service
                         larcorealg::Geometry
                         nusimdata::SimulationBase
-                        ${ART_FRAMEWORK_CORE}
-                        ${ART_FRAMEWORK_PRINCIPAL}
-                        ${ART_FRAMEWORK_SERVICES_REGISTRY}
-                        ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-                        ${ART_ROOT_IO_TFILESERVICE_SERVICE}
+                        art::Framework_Core
+                        art::Framework_Principal
+                        art::Framework_Services_Registry
+                        art_root_io::tfile_support ROOT::Core
+                        art_root_io::TFileService_service
                         art::Persistency_Common
                         art::Persistency_Provenance
                         art::Utilities
                         canvas::canvas
-                        ${MF_MESSAGELOGGER}
-                        ${MF_UTILITIES}
+                        messagefacility::MF_MessageLogger
+                        messagefacility::headers
                         cetlib::cetlib cetlib_except::cetlib_except
-                        ${ROOT_BASIC_LIB_LIST}
-                        ${ROOT_GEOM}
-                        ${ROOT_XMLIO}
-                        ${ROOT_GDML}              
+                        ${ROOT_LIBRARIES}
+                        ROOT::Geom
+                        ROOT::XMLIO
+                        ROOT::Gdml              
 )
 
 simple_plugin( FlashResAna module
@@ -262,22 +262,22 @@ simple_plugin( FlashResAna module
                         larcorealg::Geometry
                         nusimdata_SimulationBase
                         lardataobj::RecoBase
-                        ${ART_FRAMEWORK_CORE}
-                        ${ART_FRAMEWORK_PRINCIPAL}
-                        ${ART_FRAMEWORK_SERVICES_REGISTRY}
-                        ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-                        ${ART_ROOT_IO_TFILESERVICE_SERVICE}
+                        art::Framework_Core
+                        art::Framework_Principal
+                        art::Framework_Services_Registry
+                        art_root_io::tfile_support ROOT::Core
+                        art_root_io::TFileService_service
                         art::Persistency_Common
                         art::Persistency_Provenance
                         art::Utilities
                         canvas::canvas
-                        ${MF_MESSAGELOGGER}
-                        ${MF_UTILITIES}
+                        messagefacility::MF_MessageLogger
+                        messagefacility::headers
                         cetlib::cetlib cetlib_except::cetlib_except
-                        ${ROOT_BASIC_LIB_LIST}
-                        ${ROOT_GEOM}
-                        ${ROOT_XMLIO}
-                        ${ROOT_GDML}              
+                        ${ROOT_LIBRARIES}
+                        ROOT::Geom
+                        ROOT::XMLIO
+                        ROOT::Gdml              
 )
 
 simple_plugin( PhotBackground module
@@ -288,15 +288,15 @@ simple_plugin( PhotBackground module
                         icaruscode::CRT
                         sbnobj_Common_CRT
                         icaruscode::CRTUtils
-                        ${ART_FRAMEWORK_CORE}
-                        ${ART_FRAMEWORK_PRINCIPAL}
-                        ${ART_FRAMEWORK_SERVICES_REGISTRY}
-                        ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-                        ${ART_ROOT_IO_TFILESERVICE_SERVICE}
+                        art::Framework_Core
+                        art::Framework_Principal
+                        art::Framework_Services_Registry
+                        art_root_io::tfile_support ROOT::Core
+                        art_root_io::TFileService_service
                         art::Persistency_Common
                         art::Persistency_Provenance
                         art::Utilities
-                        ${ROOT_BASIC_LIB_LIST}
+                        ${ROOT_LIBRARIES}
 )
 
 install_headers()

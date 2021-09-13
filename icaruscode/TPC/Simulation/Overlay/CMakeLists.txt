@@ -4,7 +4,7 @@ art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictiona
           MODULE_LIBRARIES larcorealg::Geometry
                            larcore::Geometry_Geometry_service
                            larsim::Simulation 
-                           nug4::ParticleNavigation lardataobj_Simulation
+                           nug4::ParticleNavigation lardataobj::Simulation
                            lardata::Utilities
                            larevt::Filters
                            lardataobj_RawData

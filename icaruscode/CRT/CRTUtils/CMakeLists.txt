@@ -16,24 +16,24 @@ art_make(    LIBRARY_NAME icaruscode_CRTUtils ### MIGRATE-ACTION-RECOMMENDED: us
                            larpandora::LArPandoraInterface
                            nusimdata::SimulationBase
                            cetlib::cetlib cetlib_except::cetlib_except
-                           ${ART_FRAMEWORK_CORE}
-                           ${ART_FRAMEWORK_PRINCIPAL}
-                           ${ART_FRAMEWORK_SERVICES_REGISTRY}
-                           ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-                           ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-                           ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
+                           art::Framework_Core
+                           art::Framework_Principal
+                           art::Framework_Services_Registry
+                           art_root_io::tfile_support ROOT::Core
+                           art_root_io::TFileService_service
+                           art::Framework_Services_Optional_RandomNumberGenerator_service
                            art::Persistency_Common 
                            art::Persistency_Provenance 
                            art::Utilities canvas::canvas
-                           ${MF_MESSAGELOGGER}
-                           ${CLHEP}
-                           ${FHICLCPP}
-                           ${ROOT_GEOM}
-                           ${ROOT_XMLIO}
-                           ${ROOT_GDML}
-                           ${ROOT_GENVECTOR}
-                           ${ROOT_BASIC_LIB_LIST}
-                           ${Boost_SYSTEM_LIBRARY}
+                           messagefacility::MF_MessageLogger
+                           CLHEP::CLHEP
+                           fhiclcpp::fhiclcpp
+                           ROOT::Geom
+                           ROOT::XMLIO
+                           ROOT::Gdml
+                           ROOT::GenVector
+                           ${ROOT_LIBRARIES}
+                           Boost::system
                            icaruscode::CRT
                            sbnobj_Common_CRT
                            icaruscode::CRTData

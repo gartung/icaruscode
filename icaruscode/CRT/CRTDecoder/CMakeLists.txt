@@ -24,10 +24,10 @@ art_make_library(
     LIBRARIES 
         cetlib_except::cetlib_except
         ${ROOT_LIBRARIES}
-        ${ROOT_SPECTRUM}
-        ${ROOT_GEOM}
+        ROOT::Spectrum
+        ROOT::Geom
         ROOT::Core
-        ${CETLIB}
+        cetlib::cetlib
 )
 
 art_make_library(
@@ -39,9 +39,9 @@ art_make_library(
         cetlib_except::cetlib_except
         ROOT::Core
         ${ROOT_LIBRARIES}
-        ${ROOT_SPECTRUM}
-        ${ROOT_GEOM}
-        ${CETLIB}
+        ROOT::Spectrum
+        ROOT::Geom
+        cetlib::cetlib
 )
 
 art_make_library(
@@ -53,9 +53,9 @@ art_make_library(
         cetlib_except::cetlib_except
         ROOT::Core
         ${ROOT_LIBRARIES}
-        ${ROOT_SPECTRUM}
-        ${ROOT_GEOM}
-        ${CETLIB}
+        ROOT::Spectrum
+        ROOT::Geom
+        cetlib::cetlib
 )
 
 art_make_library(
@@ -67,9 +67,9 @@ art_make_library(
         cetlib_except::cetlib_except
         ROOT::Core
         ${ROOT_LIBRARIES}
-        ${ROOT_SPECTRUM}
-        ${ROOT_GEOM}
-        ${CETLIB}
+        ROOT::Spectrum
+        ROOT::Geom
+        cetlib::cetlib
 	CRT_RAW_TREE
 	CRT_PREPROCESS_TREE
 )
@@ -83,9 +83,9 @@ art_make_library(
         cetlib_except::cetlib_except
         ROOT::Core
         ${ROOT_LIBRARIES}
-        ${ROOT_SPECTRUM}
-        ${ROOT_GEOM}
-        ${CETLIB}
+        ROOT::Spectrum
+        ROOT::Geom
+        cetlib::cetlib
 )
 
 art_make_library(
@@ -97,9 +97,9 @@ art_make_library(
         cetlib_except::cetlib_except
         ROOT::Core
         ${ROOT_LIBRARIES}
-        ${ROOT_SPECTRUM}
-        ${ROOT_GEOM}
-        ${CETLIB}
+        ROOT::Spectrum
+        ROOT::Geom
+        cetlib::cetlib
 	CRT_TIMING
 	CRT_PREPROCESS_TREE
 )
