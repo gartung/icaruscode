@@ -4,7 +4,7 @@ art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictiona
                           lardataobj::RecoBase
                           lardata::Utilities
                           ${FHICLCPP}
-                          cetlib cetlib_except::cetlib_except
+                          cetlib::cetlib cetlib_except::cetlib_except
                           ${ROOT_BASIC_LIB_LIST}
                           larcorealg::Geometry
                           larcore::Geometry_Geometry_service
@@ -28,7 +28,7 @@ art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictiona
                           ${MF_MESSAGELOGGER}
                           ${MF_UTILITIES}
                           ${FHICLCPP}
-                          cetlib cetlib_except::cetlib_except
+                          cetlib::cetlib cetlib_except::cetlib_except
                           ${ROOT_GEOM}
                           ${ROOT_XMLIO}
                           ${ROOT_GDML}
@@ -41,7 +41,7 @@ art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictiona
                           lardataobj::RecoBase
                           lardata::Utilities
                           ${FHICLCPP}
-                          cetlib cetlib_except::cetlib_except
+                          cetlib::cetlib cetlib_except::cetlib_except
                           larcorealg::Geometry
                           larcore::Geometry_Geometry_service
                           larevt::CalibrationDBI_IOVData
@@ -58,7 +58,7 @@ art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictiona
                           ${MF_MESSAGELOGGER}
                           ${MF_UTILITIES}
                           ${FHICLCPP}
-                          cetlib cetlib_except::cetlib_except
+                          cetlib::cetlib cetlib_except::cetlib_except
                           ${ROOT_GEOM}
                           ${ROOT_FFTW}
                           ${ROOT_BASIC_LIB_LIST}

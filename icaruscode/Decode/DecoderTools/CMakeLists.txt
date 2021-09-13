@@ -12,8 +12,8 @@ art_make( SUBDIRS details ### MIGRATE-ACTION-RECOMMENDED: use art::make_library(
                         sbnobj_Common_PMT_Data
                         ${MF_MESSAGELOGGER}
                         ${FHICLCPP}
-                        cetlib_except
-                        cetlib
+                        cetlib_except::cetlib_except
+                        cetlib::cetlib
                         ROOT::RIO
                         ROOT::Core
           TOOL_LIBRARIES
@@ -47,7 +47,7 @@ art_make( SUBDIRS details ### MIGRATE-ACTION-RECOMMENDED: use art::make_library(
                         ${MF_MESSAGELOGGER}
                         ${MF_UTILITIES}
                         ${FHICLCPP}
-                        cetlib cetlib_except
+                        cetlib::cetlib cetlib_except::cetlib_except
         )
 
 install_headers()

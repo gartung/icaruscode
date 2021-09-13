@@ -86,7 +86,7 @@ art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictiona
                               canvas::canvas
                               ${MF_MESSAGELOGGER}
                               ${FHICLCPP}
-                              cetlib cetlib_except::cetlib_except
+                              cetlib::cetlib cetlib_except::cetlib_except
                               ${CLHEP}
                               ${ROOT_BASIC_LIB_LIST}
                               ${ROOT_MINUIT}

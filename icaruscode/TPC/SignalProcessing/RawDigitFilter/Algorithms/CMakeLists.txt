@@ -43,7 +43,7 @@ art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictiona
                           lardataobj::RecoBase
                           lardata::Utilities
                           ${FHICLCPP}
-                          cetlib cetlib_except::cetlib_except
+                          cetlib::cetlib cetlib_except::cetlib_except
                           larcorealg::Geometry
                           larcore::Geometry_Geometry_service
                           larevt::CalibrationDBI_IOVData

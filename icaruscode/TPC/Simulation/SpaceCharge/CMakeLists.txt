@@ -6,7 +6,7 @@ art_make( NO_PLUGINS ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art
 	      larevt::SpaceCharge	
 	      larcorealg::Geometry
           ${MF_MESSAGELOGGER}
-          cetlib cetlib_except
+          cetlib::cetlib cetlib_except::cetlib_except
 	      ${ART_FRAMEWORK_CORE}
 	      ${ART_FRAMEWORK_PRINCIPAL}
 	      ${ART_FRAMEWORK_SERVICES_REGISTRY}

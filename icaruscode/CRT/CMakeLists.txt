@@ -260,7 +260,7 @@ simple_plugin( CRTAutoVeto module
 simple_plugin( FlashResAna module
                         larcore::Geometry_Geometry_service
                         larcorealg::Geometry
-                        nusimdata_SimulationBase
+                        nusimdata::SimulationBase
                         lardataobj::RecoBase
                         art::Framework_Core
                         art::Framework_Principal
