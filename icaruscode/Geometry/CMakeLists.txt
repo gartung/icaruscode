@@ -1,28 +1,30 @@
 
-art_make( ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art_dictionary(), simple_plugin() with explicit source lists
-  SERVICE_LIBRARIES
-      icarusalg::Geometry
-      larcorealg::Geometry
-      ${ART_UTILITIES}
-      ${MF_MESSAGELOGGER}
-      ${FHICLCPP}
-      ${CETLIB}
-      ${CETLIB_EXCEPT}
-      ${ROOT_GEOM}
-      ${ROOT_XMLIO}
-      ${ROOT_GDML}
-      ${ROOT_BASIC_LIB_LIST}
-  TOOL_LIBRARIES
-      icarusalg::Geometry
-      larcorealg::Geometry
-      ${ART_UTILITIES}
-      ${MF_UTILITIES}
-      ${FHICLCPP}
-      ${CETLIB}
-      ${CETLIB_EXCEPT}
-      ${ROOT_GEOM}
-      ${ROOT_XMLIO}
-      ${ROOT_GDML}
-      ${ROOT_BASIC_LIB_LIST}    
-  )
+art_make(
+	SERVICE_LIBRARIES
+		icarusalg::Geometry
+		larcorealg::Geometry
+		larcore::Geometry_Geometry_service
+		art::Utilities
+		messagefacility::MF_MessageLogger
+		fhiclcpp::fhiclcpp
+		cetlib::cetlib
+		${CETLIB_EXCEPT}
+		ROOT::Geom
+		ROOT::XMLIO
+		${ROOT_GDML}
+
+	TOOL_LIBRARIES
+		icarusalg::Geometry
+		larcorealg::Geometry
+		larcore::Geometry_Geometry_service
+		art::Utilities
+		messagefacility::headers
+		fhiclcpp::fhiclcpp
+		cetlib::cetlib
+		${CETLIB_EXCEPT}
+		ROOT::Geom
+		ROOT::XMLIO
+		${ROOT_GDML}
+
+	)
 

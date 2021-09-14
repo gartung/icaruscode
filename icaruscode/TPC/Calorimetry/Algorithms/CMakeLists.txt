@@ -1,68 +1,69 @@
-art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictionary(), simple_plugin() with explicit source lists
-          LIB_LIBRARIES 
-                          lardataobj::RawData
-                          lardataobj::RecoBase
-                          lardata::Utilities
-                          ${FHICLCPP}
-                          cetlib::cetlib cetlib_except::cetlib_except
-                          ${ROOT_BASIC_LIB_LIST}
-                          larcorealg::Geometry
-                          larcore::Geometry_Geometry_service
-                          lardata::Utilities
-                          larevt::Filters
-                          lardataobj::RawData
-                          larevt::CalibrationDBI_IOVData
-                          larevt::CalibrationDBI_Providers
-                          lardataalg_DetectorInfo
-                          lardataobj::RecoBase
-                          icaruscode::TPC_Utilities_SignalShapingICARUSService_service
-                          ${ICARUS_FFTW_LIBRARIES}
-                          ${ART_FRAMEWORK_CORE}
-                          ${ART_FRAMEWORK_PRINCIPAL}
-                          ${ART_FRAMEWORK_SERVICES_REGISTRY}
-                          ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-                          ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-                          art::Persistency_Common canvas::canvas
-                          art::Persistency_Provenance canvas::canvas
-                          art::Utilities canvas::canvas
-                          ${MF_MESSAGELOGGER}
-                          ${MF_UTILITIES}
-                          ${FHICLCPP}
-                          cetlib::cetlib cetlib_except::cetlib_except
-                          ${ROOT_GEOM}
-                          ${ROOT_XMLIO}
-                          ${ROOT_GDML}
-                          ${ROOT_FFTW}
-                          ${ROOT_BASIC_LIB_LIST}
+include_directories(${ICARUS_FFTW_INCLUDE_DIRS})
+link_directories(${ICARUS_FFTW_LIBRARY_DIRS})
 
-          TOOL_LIBRARIES  icaruscode::TPC_Calorimetry_Algorithms
-                          icaruscode::TPC_Utilities_SignalShapingICARUSService_service
-                          lardataobj::RawData
-                          lardataobj::RecoBase
-                          lardata::Utilities
-                          ${FHICLCPP}
-                          cetlib::cetlib cetlib_except::cetlib_except
-                          larcorealg::Geometry
-                          larcore::Geometry_Geometry_service
-                          larevt::CalibrationDBI_IOVData
-                          larevt::CalibrationDBI_Providers
-                          ${ICARUS_FFTW_LIBRARIES}
-                          ${ART_FRAMEWORK_CORE}
-                          ${ART_FRAMEWORK_PRINCIPAL}
-                          ${ART_FRAMEWORK_SERVICES_REGISTRY}
-                          ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-                          ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-                          art::Persistency_Common canvas::canvas
-                          art::Persistency_Provenance canvas::canvas
-                          art::Utilities canvas::canvas
-                          ${MF_MESSAGELOGGER}
-                          ${MF_UTILITIES}
-                          ${FHICLCPP}
-                          cetlib::cetlib cetlib_except::cetlib_except
-                          ${ROOT_GEOM}
-                          ${ROOT_FFTW}
-                          ${ROOT_BASIC_LIB_LIST}
-       )
+art_make(
+	LIB_LIBRARIES
+		lardataobj::RawData
+		lardataobj::RecoBase
+		lardata::Utilities
+		fhiclcpp::fhiclcpp
+		cetlib::cetlib cetlib_except::cetlib_except
+		larcorealg::Geometry
+		larcore::Geometry_Geometry_service
+		lardata::Utilities
+		larevt::Filters
+		lardataobj::RawData
+		larevt::CalibrationDBI_IOVData
+		larevt::CalibrationDBI_Providers
+		lardataalg::DetectorInfo
+		lardataobj::RecoBase
+		icaruscode::TPC_Utilities_SignalShapingICARUSService_service
+		${ICARUS_FFTW_LIBRARIES}
+		art::Framework_Core
+		art::Framework_Principal
+		art::Framework_Services_Registry
+		art_root_io::tfile_support ROOT::Core
+		art_root_io::TFileService_service
+		art::Persistency_Common canvas::canvas
+		art::Persistency_Provenance canvas::canvas
+		art::Utilities canvas::canvas
+		messagefacility::MF_MessageLogger
+		messagefacility::headers
+		fhiclcpp::fhiclcpp
+		cetlib::cetlib cetlib_except::cetlib_except
+		ROOT::Geom
+		ROOT::XMLIO
+		${ROOT_GDML}
+		${ROOT_FFTW}
+
+	TOOL_LIBRARIES
+		icaruscode::TPC_Calorimetry_Algorithms
+		icaruscode::TPC_Utilities_SignalShapingICARUSService_service
+		lardataobj::RawData
+		lardataobj::RecoBase
+		lardata::Utilities
+		fhiclcpp::fhiclcpp
+		cetlib::cetlib cetlib_except::cetlib_except
+		larcorealg::Geometry
+		larcore::Geometry_Geometry_service
+		larevt::CalibrationDBI_IOVData
+		larevt::CalibrationDBI_Providers
+		${ICARUS_FFTW_LIBRARIES}
+		art::Framework_Core
+		art::Framework_Principal
+		art::Framework_Services_Registry
+		art_root_io::tfile_support ROOT::Core
+		art_root_io::TFileService_service
+		art::Persistency_Common canvas::canvas
+		art::Persistency_Provenance canvas::canvas
+		art::Utilities canvas::canvas
+		messagefacility::MF_MessageLogger
+		messagefacility::headers
+		fhiclcpp::fhiclcpp
+		cetlib::cetlib cetlib_except::cetlib_except
+		ROOT::Geom
+		${ROOT_FFTW}
+	)
 
 install_headers()
 install_fhicl()

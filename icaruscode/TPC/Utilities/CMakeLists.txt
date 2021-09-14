@@ -1,62 +1,64 @@
 add_subdirectory(tools)
+include_directories(${ICARUS_FFTW_INCLUDE_DIRS})
+link_directories(${ICARUS_FFTW_LIBRARY_DIRS})
+
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
 
-set( icarus_util_lib_list
-                        larcorealg::Geometry
-                        larevt::CalibrationDBI_IOVData
-                        larevt::CalibrationDBI_Providers
-                        larreco::HitFinder
-                        lardataobj::RecoBase
-                        larcore::Geometry_Geometry_service
-                        lardata::Utilities
-                        nurandom::RandomUtils_NuRandomService_service
-                        ${ICARUS_FFTW_LIBRARIES}
-                        ${ART_FRAMEWORK_CORE}
-                        ${ART_FRAMEWORK_PRINCIPAL}
-                        ${ART_FRAMEWORK_SERVICES_REGISTRY}
-                        art::Persistency_Common
-                        art::Framework_IO
-                        art::Framework_IO_detail
-                        art::Persistency_Provenance
-                        ${ART_FRAMEWORK_SERVICES_BASIC}
-                        ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-                        ${ART_FRAMEWORK_SERVICES_OPTIONAL_RANDOMNUMBERGENERATOR_SERVICE}
-                        ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-                        ${ART_FRAMEWORK_SERVICES_SYSTEM_FILECATALOGMETADATA_SERVICE}
-                        art::Framework_Services_System_TriggerNamesService_service
-                        art::Utilities
-                        canvas::canvas
-                        ${MF_MESSAGELOGGER}
-                        ${MF_UTILITIES}
-                        ${FHICLCPP}
-                        ${CETLIB}
-                        ${Boost_FILESYSTEM_LIBRARY}
-                        ${Boost_SYSTEM_LIBRARY}
-                        ${CLHEP}
-                        ${ROOT_BASIC_LIB_LIST}
-    )
+set(icarus_util_lib_list
+	larcorealg::Geometry
+	larevt::CalibrationDBI_IOVData
+	larevt::CalibrationDBI_Providers
+	larreco::HitFinder
+	lardataobj::RecoBase
+	larcore::Geometry_Geometry_service
+	lardata::Utilities
+	nurandom::RandomUtils_NuRandomService_service
+	${ICARUS_FFTW_LIBRARIES}
+	art::Framework_Core
+	art::Framework_Principal
+	art::Framework_Services_Registry
+	art::Persistency_Common
+	art::Framework_IO
+	art::Framework_IO_detail
+	art::Persistency_Provenance
+	
+	art_root_io::tfile_support ROOT::Core
+	art::Framework_Services_Optional_RandomNumberGenerator_service
+	art_root_io::TFileService_service
+	art::Framework_Services_System_FileCatalogMetadata_service
+	art::Framework_Services_System_TriggerNamesService_service
+	art::Utilities
+	canvas::canvas
+	messagefacility::MF_MessageLogger
+	messagefacility::headers
+	fhiclcpp::fhiclcpp
+	cetlib::cetlib
+	${Boost_FILESYSTEM_LIBRARY}
+	${Boost_SYSTEM_LIBRARY}
+	CLHEP::Random
+)
 
-art_make(  ### MIGRATE-ACTION-RECOMMENDED: use art_make_library(), art::dictionary(), simple_plugin() with explicit source lists
-#          LIBRARY_NAME  icaruscode_TPC_Utilities
-#          LIB_LIBRARIES ${icarus_util_lib_list}
+art_make(
+# LIBRARY_NAME icaruscode_TPC_Utilities
+# LIB_LIBRARIES$ {icarus_util_lib_list}
 #
-          SERVICE_LIBRARIES 
-                        ${icarus_util_lib_list}
+	SERVICE_LIBRARIES
+		${icarus_util_lib_list}
 
-          MODULE_LIBRARIES
-                        ${ART_ROOT_IO_TFILESERVICE_SERVICE}
-                        ${ART_ROOT_IO_TFILE_SUPPORT} ${ROOT_CORE}
-                        ${ART_FRAMEWORK_SERVICES_REGISTRY}
-                        ${ART_FRAMEWORK_PRINCIPAL}
-                        ${ART_FRAMEWORK_CORE}
-                        canvas::canvas
-                        ${MF_MESSAGELOGGER}
-                        hep_concurrency::hep_concurrency
-                        ${FHICLCPP}
-                        ${CETLIB}
-                        ${ROOT_CORE}
-       )
+	MODULE_LIBRARIES
+		art_root_io::TFileService_service
+		art_root_io::tfile_support ROOT::Core
+		art::Framework_Services_Registry
+		art::Framework_Principal
+		art::Framework_Core
+		canvas::canvas
+		messagefacility::MF_MessageLogger
+		hep_concurrency::hep_concurrency
+		fhiclcpp::fhiclcpp
+		cetlib::cetlib
+		ROOT::Core
+	)
 
 
 install_headers()
