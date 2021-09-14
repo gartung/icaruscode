@@ -5,9 +5,9 @@ add_definitions(-DEIGEN_FFTW_DEFAULT)
 art_make(
 	TOOL_LIBRARIES
 		larcorealg::Geometry
-		icarus_signal_processing
-		icarus_signal_processing_Detection
-		icarus_signal_processing_Filters
+		#icarus_signal_processing::icarus_signal_processing
+		#icarus_signal_processing::icarus_signal_processing_Detection
+		#icarus_signal_processing::icarus_signal_processing_Filters
 		larevt::CalibrationDBI_IOVData
 		larevt::CalibrationDBI_Providers
 		lardataobj::RecoBase

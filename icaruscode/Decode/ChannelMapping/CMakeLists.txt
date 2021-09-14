@@ -1,5 +1,7 @@
 cet_enable_asserts()
 
+include_directories(${LIBWDA_INC})
+
 art_make(
 	EXCLUDE "PMTChannelMapDumper.cxx"
 	LIB_LIBRARIES
@@ -30,8 +32,8 @@ art_make(
 		cetlib::cetlib cetlib_except::cetlib_except
 		${TBB}
 	TOOL_LIBRARIES
-		lardata_Utilities
-		lardata_ArtDataHelper
+		lardata::Utilities
+		lardata::ArtDataHelper
 		LIBWDA
 		art::Framework_Core
 		art::Framework_Principal

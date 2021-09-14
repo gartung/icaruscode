@@ -1,3 +1,5 @@
+include_directories(${TRACE_INC})
+
 art_make(
 	EXCLUDE
 		CrtCal.cc

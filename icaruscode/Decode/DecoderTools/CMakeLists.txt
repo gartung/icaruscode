@@ -20,9 +20,9 @@ art_make(SUBDIRS details
 	TOOL_LIBRARIES
 		sbndaq-artdaq-core::Overlays_ICARUS
 		artdaq_core::artdaq-core_Utilities
-		icarus_signal_processing
-		icarus_signal_processing_Detection
-		icarus_signal_processing_Filters
+		#icarus_signal_processing::icarus_signal_processing
+		#icarus_signal_processing::icarus_signal_processing_Detection
+		#icarus_signal_processing::icarus_signal_processing_Filters
 		icaruscode::TPC_Utilities_SignalShapingICARUSService_service
 		icaruscode::Decode_DecoderTools
 		icaruscode::Decode_DecoderTools_Dumpers

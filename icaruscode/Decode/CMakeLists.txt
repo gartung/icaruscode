@@ -1,6 +1,8 @@
+include_directories(${TRACE_INC})
+
 cet_enable_asserts()
 
-cet_find_library(LIBWD ANAMES wda PATHS ENV LIBWDA_LIB)
+cet_find_library(LIBWDA NAMES wda PATHS ENV LIBWDA_LIB)
 
 art_make(
 	EXCLUDE
@@ -9,9 +11,9 @@ art_make(
 		DumpArtDAQfragments_module.cc
 		DaqDecoderICARUSPMT_module.cc
 	MODULE_LIBRARIES
-	icarus_signal_processing
-	icarus_signal_processing_Detection
-	icarus_signal_processing_Filters
+	#icarus_signal_processing::icarus_signal_processing
+	#icarus_signal_processing::icarus_signal_processing_Detection
+	#icarus_signal_processing::icarus_signal_processing_Filters
 	sbndaq-artdaq-core::Overlays_ICARUS
 	artdaq_core::artdaq-core_Utilities
 	larcorealg::Geometry

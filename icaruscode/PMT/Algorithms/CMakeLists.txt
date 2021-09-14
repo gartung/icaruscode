@@ -1,5 +1,7 @@
 #Leave this out for the time being. One day the grid will be updated enough ...
-#cet_set_compiler_flags(EXTRA_CXX_FLAGS-mavx)
+#cet_set_compiler_flags(EXTRA_CXX_FLAGS -mavx)
+
+include_directories(${CPPGSL_INC})
 
 art_make(
 	LIB_LIBRARIES

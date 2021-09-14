@@ -18,9 +18,9 @@ art_make(
 			cetlib::cetlib
 
 		MODULE_LIBRARIES
-			icarus_signal_processing
-			icarus_signal_processing_Detection
-			icarus_signal_processing_Filters
+			#icarus_signal_processing::icarus_signal_processing
+			#icarus_signal_processing::icarus_signal_processing_Detection
+			#icarus_signal_processing::icarus_signal_processing_Filters
 			larcorealg::Geometry
 			larcore::Geometry_Geometry_service
 			lardata::Utilities
