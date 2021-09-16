@@ -25,8 +25,8 @@ art_make(MODULE_LIBRARIES lardataobj::RecoBase
 		fhiclcpp::fhiclcpp
 		cetlib::cetlib
 		cetlib_except::cetlib_except
-		${Boost_FILESYSTEM_LIBRARY}
-		${Boost_SYSTEM_LIBRARY}
+		Boost::filesystem
+		Boost::system
 		CLHEP::Random
 
 	TOOL_LIBRARIES lardataobj::RecoBase
@@ -54,8 +54,8 @@ art_make(MODULE_LIBRARIES lardataobj::RecoBase
 		fhiclcpp::fhiclcpp
 		cetlib::cetlib
 		cetlib_except::cetlib_except
-		${Boost_FILESYSTEM_LIBRARY}
-		${Boost_SYSTEM_LIBRARY}
+		Boost::filesystem
+		Boost::system
 		CLHEP::Random
 	)
 

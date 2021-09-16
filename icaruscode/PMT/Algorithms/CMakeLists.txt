@@ -9,21 +9,15 @@ art_make(
 		lardataobj::RawData
 		icarusalg::Utilities
                 lardataalg::DetectorInfo
-		#lardataobj::RecoBase
-		#lardata::Utilities
-		#larcorealg::Geometry
-		#lardata::ArtDataHelper
-		#nusimdata::SimulationBase
 		canvas::canvas
 		messagefacility::MF_MessageLogger
 		messagefacility::headers
 		fhiclcpp::fhiclcpp
 		cetlib::cetlib
 		cetlib_except::cetlib_except
-		${ROOT_FFTW}
-		${ROOT_GENVECTOR}
+		ROOT::FFTW
+		ROOT::GenVector
 		CLHEP::Random
-		#${Boost_SYSTEM_LIBRARY}
 	)
 
 install_headers()

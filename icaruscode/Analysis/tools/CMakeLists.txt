@@ -2,6 +2,7 @@ cet_enable_asserts()
 add_subdirectory(MCTruth)
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
+include_directories(${FFTW3_INCLUDE_DIRS})
 
 art_make(TOOL_LIBRARIES lardataobj::RecoBase
 		lardataobj::Simulation
@@ -29,8 +30,8 @@ art_make(TOOL_LIBRARIES lardataobj::RecoBase
 		fhiclcpp::fhiclcpp
 		cetlib::cetlib
 		cetlib_except::cetlib_except
-		${Boost_FILESYSTEM_LIBRARY}
-		${Boost_SYSTEM_LIBRARY}
+		Boost::filesystem
+		Boost::system
 		CLHEP::Random
 		${ROOT_MINUIT}
 		)

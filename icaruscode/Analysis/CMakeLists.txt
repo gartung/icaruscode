@@ -33,7 +33,7 @@ art_make(MODULE_LIBRARIES larcorealg::Geometry
 		CLHEP::Random
 		ROOT::Geom
 		ROOT::XMLIO
-		${ROOT_GDML}
+		ROOT::Gdml
 		icaruscode::RecoUtils
 		Eigen3::Eigen
 		)

@@ -7,8 +7,8 @@ art_make(
                 larcorealg::CoreUtils
 		art_root_io::tfile_support
 		messagefacility::MF_MessageLogger
-		${CETLIB_EXCEPT}
-		${ROOT_RIO}
+		cetlib_except::cetlib_except
+		ROOT::RIO
 		ROOT::Core
 	)
 

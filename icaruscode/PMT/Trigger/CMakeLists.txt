@@ -20,6 +20,8 @@ art_make(
 		lardataalg::MCDumpers
 		larcorealg::Geometry
 		lardataobj::RawData
+                lardata::Utilities
+		lardata::DetectorInfoServices_DetectorClocksServiceStandard_service
 		nusimdata::SimulationBase
 		art_root_io::TFileService_service
 		art_root_io::tfile_support
@@ -31,7 +33,7 @@ art_make(
 		canvas::canvas
 		messagefacility::MF_MessageLogger
 		fhiclcpp::fhiclcpp
-		${CETLIB_EXCEPT}
+		cetlib_except::cetlib_except
 		ROOT::GenVector
 		ROOT::Hist
 		ROOT::Tree
@@ -41,6 +43,8 @@ art_make(
 		sbnobj::ICARUS_PMT_Trigger_Data
 		lardataalg::DetectorInfo
 		lardataobj::RawData
+                lardata::Utilities
+		larcore::Geometry_Geometry_service
 		art::Framework_Services_Registry
 		messagefacility::MF_MessageLogger
 		fhiclcpp::fhiclcpp
@@ -51,11 +55,14 @@ art_make(
 		sbnobj::ICARUS_PMT_Trigger_Data
 		lardataalg::DetectorInfo
 		lardataobj::RawData
+		lardata::DetectorInfoServices_DetectorClocksServiceStandard_service
 		messagefacility::MF_MessageLogger
 		fhiclcpp::fhiclcpp
+		larcore::Geometry_Geometry_service
 	)
 
 simple_plugin(DiscriminatePMTwaveformsByChannel module
+                LIBRARIES
 		icaruscode::PMT_Trigger_Algorithms
 		sbnobj::ICARUS_PMT_Trigger_Data
 		sbnobj::ICARUS_PMT_Data
@@ -63,23 +70,29 @@ simple_plugin(DiscriminatePMTwaveformsByChannel module
 		icaruscode::PMT_Trigger_Utilities
 		icaruscode::PMT_Algorithms
 		lardataobj::RawData
+                lardata::Utilities
+		lardata::DetectorInfoServices_DetectorClocksServiceStandard_service
+		larcore::Geometry_Geometry_service
 		art::Framework_Services_Registry
 		art::Framework_Principal
 		art::Framework_Core
 		canvas::canvas
 		messagefacility::MF_MessageLogger
 		fhiclcpp::fhiclcpp
-		${CETLIB_EXCEPT}
+		cetlib_except::cetlib_except
 		ROOT::Core
 		)
 
 simple_plugin(SlidingWindowTrigger module
+                LIBRARIES
 		icaruscode::PMT_Trigger_Algorithms
 		sbnobj::ICARUS_PMT_Trigger_Data
 		icaruscode::PMT_Trigger_Utilities
 		icaruscode::PMT_Algorithms
 		larcore::Geometry_Geometry_service
 		larcorealg::Geometry
+                lardata::Utilities
+		lardata::DetectorInfoServices_DetectorClocksServiceStandard_service
 		lardataobj::RawData
 		art::Framework_Services_Registry
 		art::Framework_Principal
@@ -87,17 +100,20 @@ simple_plugin(SlidingWindowTrigger module
 		canvas::canvas
 		messagefacility::MF_MessageLogger
 		fhiclcpp::fhiclcpp
-		${CETLIB_EXCEPT}
+		cetlib_except::cetlib_except
 		ROOT::Core
 		)
 
 simple_plugin(MajorityTriggerSimulation module
+                LIBRARIES
 		icaruscode::PMT_Trigger_Algorithms
 		sbnobj::ICARUS_PMT_Trigger_Data
 		icaruscode::PMT_Trigger_Utilities
 		larcore::Geometry_Geometry_service
 		larcorealg::Geometry
+                lardata::Utilities
 		lardataobj::RawData
+		lardata::DetectorInfoServices_DetectorClocksServiceStandard_service
 		art_root_io::TFileService_service
 		art_root_io::tfile_support
 		art::Framework_Services_Registry
@@ -106,18 +122,21 @@ simple_plugin(MajorityTriggerSimulation module
 		canvas::canvas
 		messagefacility::MF_MessageLogger
 		fhiclcpp::fhiclcpp
-		${CETLIB_EXCEPT}
+		cetlib_except::cetlib_except
 		ROOT::Hist
 		ROOT::Core
 		)
 
 simple_plugin(SlidingWindowTriggerSimulation module
+                LIBRARIES
 		icaruscode::PMT_Trigger_Algorithms
 		sbnobj::ICARUS_PMT_Trigger_Data
 		icaruscode::PMT_Trigger_Utilities
 		larcore::Geometry_Geometry_service
 		larcorealg::Geometry
 		lardataobj::RawData
+                lardata::Utilities
+		lardata::DetectorInfoServices_DetectorClocksServiceStandard_service
 		art_root_io::TFileService_service
 		art_root_io::tfile_support
 		art::Framework_Services_Registry
@@ -126,18 +145,22 @@ simple_plugin(SlidingWindowTriggerSimulation module
 		canvas::canvas
 		messagefacility::MF_MessageLogger
 		fhiclcpp::fhiclcpp
-		${CETLIB_EXCEPT}
+		cetlib_except::cetlib_except
 		ROOT::Hist
 		ROOT::Core
 		)
 
 simple_plugin(TriggerEfficiencyPlots module
+                LIBRARIES
+                icarusalg::Utilities
 		icaruscode::PMT_Trigger_Utilities
 		sbnobj::ICARUS_PMT_Trigger_Data
 		larcore::Geometry_Geometry_service
 		lardataalg::MCDumpers
 		larcorealg::Geometry
 		lardataobj::RawData
+                lardata::Utilities
+		lardata::DetectorInfoServices_DetectorClocksServiceStandard_service
 		nusimdata::SimulationBase
 		art_root_io::TFileService_service
 		art_root_io::tfile_support
@@ -147,7 +170,7 @@ simple_plugin(TriggerEfficiencyPlots module
 		canvas::canvas
 		messagefacility::MF_MessageLogger
 		fhiclcpp::fhiclcpp
-		${CETLIB_EXCEPT}
+		cetlib_except::cetlib_except
 		ROOT::GenVector
 		ROOT::Hist
 		ROOT::Tree
@@ -155,11 +178,14 @@ simple_plugin(TriggerEfficiencyPlots module
 		)
 
 simple_plugin(MakeTriggerSimulationTree module
+                LIBRARIES
 		icaruscode::PMT_Trigger_Algorithms
 		icaruscode::PMT_Trigger_Utilities
 		sbnobj::ICARUS_PMT_Trigger_Data
 		larcore::Geometry_Geometry_service
 		lardataalg::MCDumpers
+                lardata::Utilities
+		lardata::DetectorInfoServices_DetectorClocksServiceStandard_service
 		larcorealg::Geometry
 		nusimdata::SimulationBase
 		art_root_io::TFileService_service
@@ -170,7 +196,7 @@ simple_plugin(MakeTriggerSimulationTree module
 		canvas::canvas
 		messagefacility::MF_MessageLogger
 		fhiclcpp::fhiclcpp
-		${CETLIB_EXCEPT}
+		cetlib_except::cetlib_except
 		ROOT::GenVector
 		ROOT::Tree
 		ROOT::Core
@@ -183,12 +209,15 @@ foreach(TriggerEfficiencyPlotsModule
 	)
 
 	simple_plugin(${TriggerEfficiencyPlotsModule} module
+                LIBRARIES
 		icaruscode::PMT_Trigger_Algorithms
 		icaruscode::PMT_Trigger
 		icaruscode::PMT_Trigger_Utilities
 		sbnobj::ICARUS_PMT_Trigger_Data
 		larcore::Geometry_Geometry_service
 		lardataalg::MCDumpers
+                lardata::Utilities
+		lardata::DetectorInfoServices_DetectorClocksServiceStandard_service
 		larcorealg::Geometry
 		lardataobj::RawData
 		nusimdata::SimulationBase
@@ -201,7 +230,7 @@ foreach(TriggerEfficiencyPlotsModule
 		canvas::canvas
 		messagefacility::MF_MessageLogger
 		fhiclcpp::fhiclcpp
-		${CETLIB_EXCEPT}
+		cetlib_except::cetlib_except
 		ROOT::GenVector
 		ROOT::Hist
 		ROOT::Tree

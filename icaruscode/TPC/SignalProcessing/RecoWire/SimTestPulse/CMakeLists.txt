@@ -42,7 +42,7 @@ art_make(	LIB_LIBRARIES
 			messagefacility::headers
 			fhiclcpp::fhiclcpp
 			cetlib::cetlib
-			${ROOT_FFTW}
+			ROOT::FFTW
 )
 
 install_fhicl()

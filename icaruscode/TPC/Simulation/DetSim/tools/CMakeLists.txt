@@ -1,7 +1,5 @@
 cet_enable_asserts()
-include_directories(${ICARUS_FFTW_INCLUDE_DIRS})
-link_directories(${ICARUS_FFTW_LIBRARY_DIRS})
-
+include_directories(${FFTW3_INCLUDE_DIRS})
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
 
@@ -22,7 +20,7 @@ art_make(
 			art::Framework_Services_Registry
 			art::Persistency_Common
 			art::Persistency_Provenance
-			
+			icarus_signal_processing::icarus_signal_processing	
 			art_root_io::tfile_support ROOT::Core
 			art::Framework_Services_Optional_RandomNumberGenerator_service
 			art_root_io::TFileService_service
@@ -33,9 +31,10 @@ art_make(
 			messagefacility::headers
 			fhiclcpp::fhiclcpp
 			cetlib::cetlib
-			${Boost_FILESYSTEM_LIBRARY}
-			${Boost_SYSTEM_LIBRARY}
+			Boost::filesystem
+			Boost::system
 			CLHEP::Random
+                        Eigen3::Eigen
 )
 
 install_headers()

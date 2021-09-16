@@ -26,7 +26,7 @@ MODULE_LIBRARIES larcorealg::Geometry
 	fhiclcpp::fhiclcpp
 	ROOT::Geom
 	ROOT::XMLIO
-	${ROOT_GDML}
+	ROOT::Gdml
 	icaruscode::RecoUtils
 	)
 

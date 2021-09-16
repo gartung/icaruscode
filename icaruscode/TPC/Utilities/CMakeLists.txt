@@ -1,6 +1,6 @@
 add_subdirectory(tools)
-include_directories(${ICARUS_FFTW_INCLUDE_DIRS})
-link_directories(${ICARUS_FFTW_LIBRARY_DIRS})
+include_directories(${FFTW3_INCLUDE_DIRS})
+link_directories(${FFTW3_LIBRARY_DIRS})
 
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
@@ -34,8 +34,8 @@ set(icarus_util_lib_list
 	messagefacility::headers
 	fhiclcpp::fhiclcpp
 	cetlib::cetlib
-	${Boost_FILESYSTEM_LIBRARY}
-	${Boost_SYSTEM_LIBRARY}
+	Boost::filesystem
+	Boost::system
 	CLHEP::Random
 )
 

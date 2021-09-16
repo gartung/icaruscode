@@ -28,8 +28,8 @@ art_make(
 		ROOT::EG
 		ROOT::Geom
 		ROOT::XMLIO
-		${ROOT_GDML}
-		${ROOT_GENVECTOR}
+		ROOT::Gdml
+		ROOT::GenVector
 	)
 
 #install_headers()

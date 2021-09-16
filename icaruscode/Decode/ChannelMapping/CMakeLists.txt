@@ -11,6 +11,7 @@ art_make(
 		messagefacility::MF_MessageLogger
 		cetlib_except::cetlib_except
 		cetlib::cetlib
+                larcorealg::CoreUtils
 	SERVICE_LIBRARIES
 		icaruscode::Decode_ChannelMapping
 		lardata::Utilities
@@ -32,6 +33,7 @@ art_make(
 		cetlib::cetlib cetlib_except::cetlib_except
 		${TBB}
 	TOOL_LIBRARIES
+                larcorealg::CoreUtils
 		lardata::Utilities
 		lardata::ArtDataHelper
 		LIBWDA
@@ -48,7 +50,7 @@ art_make(
 		messagefacility::headers
 		fhiclcpp::fhiclcpp
 		cetlib::cetlib cetlib_except::cetlib_except
-		${SQLITE3}
+		SQLite::SQLite3
 		${TBB}
 	)
 

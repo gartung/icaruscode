@@ -9,10 +9,14 @@ add_subdirectory(Trigger)
 # AVX is not so relevant after the last commit anyway
 # cet_set_compiler_flags(EXTRA_CXX_FLAGS-mavx)
 
+include_directories(${CPPGSL_INC})
+
 simple_plugin(SimPMTIcarus "module"
 			icaruscode::PMT_Algorithms
 			lardataobj::RawData
 			lardataobj::Simulation
+                        larcore::Geometry_Geometry_service
+                        lardata::Utilities
 			nurandom::RandomUtils_NuRandomService_service
 			art::Framework_Core
 			art::Framework_Principal
@@ -26,7 +30,7 @@ simple_plugin(SimPMTIcarus "module"
 			fhiclcpp::fhiclcpp
 			cetlib::cetlib
 			cetlib_except::cetlib_except
-			${Boost_SYSTEM_LIBRARY}
+			Boost::system
 			)
 
 simple_plugin(PMTWaveformBaselines "module"
@@ -35,6 +39,7 @@ simple_plugin(PMTWaveformBaselines "module"
 			larcore::Geometry_Geometry_service
 			larcorealg::Geometry
 			lardataobj::RawData
+                        lardata::Utilities
 			art_root_io::TFileService_service
 			art_root_io::tfile_support
 			art::Framework_Services_Registry
@@ -49,6 +54,7 @@ simple_plugin(PMTWaveformBaselinesFromReadoutConfiguration "module"
 			larcore::Geometry_Geometry_service
 			larcorealg::Geometry
 			lardataobj::RawData
+                        lardata::Utilities
 			art_root_io::TFileService_service
 			art_root_io::tfile_support
 			art::Framework_Services_Registry
@@ -86,7 +92,7 @@ art_make(
 			lardata::Utilities
 			fhiclcpp::fhiclcpp
 			cetlib::cetlib
-			${Boost_SYSTEM_LIBRARY}
+			Boost::system
 	MODULE_LIBRARIES
 			larcorealg::Geometry
 			larcore::Geometry_Geometry_service
@@ -119,9 +125,9 @@ art_make(
 			cetlib_except::cetlib_except
 			ROOT::Geom
 			ROOT::XMLIO
-			${ROOT_GDML}
-			${ROOT_FFTW}			
-			${Boost_SYSTEM_LIBRARY}
+			ROOT::Gdml
+			ROOT::FFTW			
+			Boost::system
 )
 
 install_headers()

@@ -45,9 +45,8 @@ find_package(PostgreSQL)
 find_package(Eigen3)
 find_package(ifdh_art)
 find_package(guideline_sl)
-
+find_package(range-v3)
 find_package(sbnobj)
-find_package(sbncode)
 find_package(sbndaq-artdaq-core)
 find_package(icarus_signal_processing)
 find_package(icarusalg)
@@ -55,9 +54,7 @@ find_package(icarusutil)
 find_package(icarus_data)
 
 find_package(artdaq_core)
-find_package(sbndaq_artdaq_core)
 
-cet_find_library(PQ NAMES pq PATHS ENV POSTGRESQL_LIBRARIES NO_DEFAULT_PATH)
 find_package(larcoreobj)
 find_package(larcorealg)
 find_package(lardataobj)
@@ -76,31 +73,27 @@ find_package(nug4)
 find_package(art)
 find_package(canvas)
 find_package(messagefacility)
-find_package(libwda)
-find_package(FFTW3${FFTW_PRECISION}) ### FFTW_PRECISION=none(default),f(float),l(long),q(quad)
+find_package(FFTW3)
 find_package(libwda)
 find_package(ifdh_art)
-find_package(guideline_sl)
 find_package(ROOT)
 find_package(Boost COMPONENTS system)
 find_package(protobuf)
 find_package(PandoraSDK)
 find_package(PandoraMonitoring)
-
+find_package(SQLite3)
 find_package(artdaq_core)
 find_package(sbndaq_artdaq_core)
+find_package(PostgreSQL)
 
-cet_find_library(PQ NAMES pq PATHS ENV POSTGRESQL_LIBRARIES NO_DEFAULT_PATH)
-cet_find_library(NURANDOM_RANDOMUTILS_NURANDOMSERVICE_SERVICE
-	NAMES nurandom_RandomUtils_NuRandomService_service
-	PATHS ENV NURANDOM_LIB)
+cet_find_library(PQ NAMES pq )
 
 #deal with fftw
-#only one precision of FFTW3 should be foundabove {,f,l,q}
-#the corresponding variables are set by the config file for that precision
-set(ICARUS_FFTW_LIBRARIES ${FFTW3_LIBRARIES} ${FFTW3F_LIBRARIES} ${FFTW3L_LIBRARIES} ${FFTW3Q_LIBRARIES})
-set(ICARUS_FFTW_INCLUDE_DIRS ${FFTW3_INCLUDE_DIRS} ${FFTW3F_INCLUDE_DIRS} ${FFTW3L_INCLUDE_DIRS} ${FFTW3Q_INCLUDE_DIRS})
-set(ICARUS_FFTW_LIBRARY_DIRS ${FFTW3_LIBRARY_DIRS} ${FFTW3F_LIRBARY_DIRS} ${FFTW3L_LIBRARY_DIRS} ${FFTW3Q_LIBRARY_DIRS})
+cet_find_library(ICARUS_FFTW3_LIBRARY  NAMES fftw3  PATHS ${FFTW3_LIBRARY_DIRS} )
+cet_find_library(ICARUS_FFTW3F_LIBRARY NAMES fftw3f PATHS ${FFTW3_LIBRARY_DIRS} )
+cet_find_library(ICARUS_FFTW3L_LIBRARY NAMES fftw3l PATHS ${FFTW3_LIBRARY_DIRS} )
+cet_find_library(ICARUS_FFTW3Q_LIBRARY NAMES fftw3q PATHS ${FFTW3_LIBRARY_DIRS} )
+set(ICARUS_FFTW_LIBRARIES ICARUS_FFTW3_LIBRARY ICARUS_FFTW3F_LIBRARY ICARUS_FFTW3L_LIBRARY ICARUS_FFTW3Q_LIBRARY)
 
 # macros for dictionary and simple_plugin
 include(ArtDictionary)

@@ -8,6 +8,7 @@ add_subdirectory(ROITools)
 add_subdirectory(SimTestPulse)
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
+include_directories(${FFTW3_INCLUDE_DIRS})
 
 art_make(
 		LIB_LIBRARIES
@@ -18,9 +19,9 @@ art_make(
 			cetlib::cetlib
 
 		MODULE_LIBRARIES
-			#icarus_signal_processing::icarus_signal_processing
-			#icarus_signal_processing::icarus_signal_processing_Detection
-			#icarus_signal_processing::icarus_signal_processing_Filters
+			icarus_signal_processing::icarus_signal_processing
+			icarus_signal_processing::Detection
+			icarus_signal_processing::Filters
 			larcorealg::Geometry
 			larcore::Geometry_Geometry_service
 			lardata::Utilities
@@ -45,7 +46,7 @@ art_make(
 			messagefacility::headers
 			fhiclcpp::fhiclcpp
 			cetlib::cetlib
-			${ROOT_FFTW}
+			ROOT::FFTW
 			${TBB}
 		)
 

@@ -1,6 +1,6 @@
 
-include_directories(${ICARUS_FFTW_INCLUDE_DIRS})
-link_directories(${ICARUS_FFTW_LIBRARY_DIRS})
+include_directories(${FFTW3_INCLUDE_DIRS})
+link_directories(${FFTW3_LIBRARY_DIRS})
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
 
@@ -22,6 +22,7 @@ art_make(
 		lardataobj::RecoBase
 		icaruscode::TPC_Utilities_SignalShapingICARUSService_service
 		${ICARUS_FFTW_LIBRARIES}
+                icarus_signal_processing::icarus_signal_processing
 		art::Framework_Core
 		art::Framework_Principal
 		art::Framework_Services_Registry
@@ -37,8 +38,9 @@ art_make(
 		cetlib_except::cetlib_except
 		ROOT::Geom
 		ROOT::XMLIO
-		${ROOT_GDML}
-		${ROOT_FFTW}
+		ROOT::Gdml
+		ROOT::FFTW
+		Eigen3::Eigen
 
 	TOOL_LIBRARIES
 		icaruscode::TPC_SignalProcessing_RawDigitFilter_Algorithms
@@ -66,7 +68,7 @@ art_make(
 		fhiclcpp::fhiclcpp
 		cetlib::cetlib cetlib_except::cetlib_except
 		ROOT::Geom
-		${ROOT_FFTW}
+		ROOT::FFTW
 
 )
 

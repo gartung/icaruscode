@@ -5,6 +5,7 @@ art_make(NO_PLUGINS
 		lardataalg::DetectorInfo
 		larevt::SpaceCharge	
 		larcorealg::Geometry
+                larsim::MCCheater_BackTracker
                 larcore::Geometry_Geometry_service
 		messagefacility::MF_MessageLogger
 		cetlib::cetlib cetlib_except::cetlib_except
@@ -18,7 +19,7 @@ art_make(NO_PLUGINS
 		art::Persistency_Provenance
 		art::Utilities
 		fhiclcpp::fhiclcpp
-		${Boost_SYSTEM_LIBRARY}
+		Boost::system
 	)
 install_headers()
 install_fhicl()

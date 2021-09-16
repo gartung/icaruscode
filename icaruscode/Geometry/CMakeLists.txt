@@ -8,10 +8,10 @@ art_make(
 		messagefacility::MF_MessageLogger
 		fhiclcpp::fhiclcpp
 		cetlib::cetlib
-		${CETLIB_EXCEPT}
+		cetlib_except::cetlib_except
 		ROOT::Geom
 		ROOT::XMLIO
-		${ROOT_GDML}
+		ROOT::Gdml
 
 	TOOL_LIBRARIES
 		icarusalg::Geometry
@@ -21,10 +21,10 @@ art_make(
 		messagefacility::headers
 		fhiclcpp::fhiclcpp
 		cetlib::cetlib
-		${CETLIB_EXCEPT}
+		cetlib_except::cetlib_except
 		ROOT::Geom
 		ROOT::XMLIO
-		${ROOT_GDML}
+		ROOT::Gdml
 
 	)
 

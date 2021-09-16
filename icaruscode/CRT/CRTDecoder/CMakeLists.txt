@@ -69,7 +69,7 @@ art_make_library(
 		ROOT::Core
 		ROOT::Spectrum
 		ROOT::Geom
-		cetlib::cetlib
+		cetlib::cetlib ROOT::Tree
 		CRT_RAW_TREE
 		CRT_PREPROCESS_TREE
 	)
@@ -111,7 +111,7 @@ art_make_library(
 	LIBRARIES
 		cetlib_except::cetlib_except
 		canvas::canvas
-		${ARTDAQ_DAQDATA}
+		
 		art::Framework_Principal
 		sbndaq-artdaq-core::Overlays
 		sbndaq-artdaq-core::Overlays_Common
@@ -126,10 +126,11 @@ simple_plugin(BernCRTAna "module"
 	art::Framework_Services_Registry
 	art_root_io::tfile_support
 	art_root_io::TFileService_service
-	${ARTDAQ-CORE_UTILITIES}
+	artdaq_core::artdaq-core_Utilities
 	sbndaq-artdaq-core::Overlays_Common
 	artdaq_core::artdaq-core_Data
 	BERN_CRT_TRANSLATOR
+	ROOT::Tree ROOT::Hist ROOT::Core
 	)
 
 simple_plugin(CrtNoiseMonTool "module"
@@ -137,10 +138,11 @@ simple_plugin(CrtNoiseMonTool "module"
 	art_root_io::tfile_support
 	art_root_io::TFileService_service
 	#art::Framework_Services_Optional
-	${ARTDAQ-CORE_UTILITIES}
+	artdaq_core::artdaq-core_Utilities
 	sbndaq-artdaq-core::Overlays_Common
 	artdaq_core::artdaq-core_Data
 	BERN_CRT_TRANSLATOR
+	ROOT::Tree ROOT::Hist ROOT::Core
 	)
 
 simple_plugin(CrtCalAnalysis "module"
@@ -149,11 +151,12 @@ simple_plugin(CrtCalAnalysis "module"
 	art_root_io::TFileService_service
 	#art::Framework_Services_Optional
 	#art::Framework_Services_Optional_TFileService_service
-	${ARTDAQ-CORE_UTILITIES}
+	artdaq_core::artdaq-core_Utilities
 	sbndaq-artdaq-core::Overlays_Common
 	artdaq_core::artdaq-core_Data
 	CRT_CAL
 	BERN_CRT_TRANSLATOR
+	ROOT::Tree ROOT::Hist ROOT::Core
 	)
 
 simple_plugin(AnaProducer "module"
@@ -162,7 +165,7 @@ simple_plugin(AnaProducer "module"
 	art_root_io::TFileService_service
 	#art::Framework_Services_Optional
 	#art::Framework_Services_Optional_TFileService_service
-	${ARTDAQ-CORE_UTILITIES}
+	artdaq_core::artdaq-core_Utilities
 	sbndaq-artdaq-core::Overlays_Common
 	artdaq_core::artdaq-core_Data
 	CRT_CAL
@@ -170,6 +173,7 @@ simple_plugin(AnaProducer "module"
 	CRT_RAW_TREE
 	CRT_TIMING
 	BERN_CRT_TRANSLATOR
+	ROOT::Tree ROOT::Hist ROOT::Core
 	)
 
 simple_plugin(CRTEventProducer "module"
@@ -184,17 +188,19 @@ simple_plugin(CRTEventProducer "module"
 	sbnobj::Common_CRT
 	lardata::Utilities
         larcore::Geometry_StandardGeometryHelper_service
+	ROOT::Tree ROOT::Hist ROOT::Core
 	)
 
 simple_plugin(DecoderICARUSCRT "module"
 	art::Framework_Services_Registry
 	art_root_io::tfile_support
 	art_root_io::TFileService_service
-	${ARTDAQ-CORE_UTILITIES}
+	artdaq_core::artdaq-core_Utilities
 	sbndaq-artdaq-core::Overlays_Common
 	artdaq_core::artdaq-core_Data
 	BERN_CRT_TRANSLATOR
 	sbnobj::Common_CRT
+	ROOT::Tree ROOT::Hist ROOT::Core
 	)
 
 install_fhicl()

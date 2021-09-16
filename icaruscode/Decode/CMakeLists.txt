@@ -11,9 +11,9 @@ art_make(
 		DumpArtDAQfragments_module.cc
 		DaqDecoderICARUSPMT_module.cc
 	MODULE_LIBRARIES
-	#icarus_signal_processing::icarus_signal_processing
-	#icarus_signal_processing::icarus_signal_processing_Detection
-	#icarus_signal_processing::icarus_signal_processing_Filters
+	icarus_signal_processing::icarus_signal_processing
+	icarus_signal_processing::Detection
+	icarus_signal_processing::Filters
 	sbndaq-artdaq-core::Overlays_ICARUS
 	artdaq_core::artdaq-core_Utilities
 	larcorealg::Geometry
@@ -47,6 +47,7 @@ simple_plugin(DaqDecoderICARUSPMT module
 	sbndaq-artdaq-core::Overlays_Common
 	sbndaq-artdaq-core::Overlays
 	lardataobj::RawData
+	larcore::Geometry_Geometry_service
 	artdaq_core::artdaq-core_Data
 	art_root_io::TFileService_service
 	art_root_io::tfile_support
@@ -55,6 +56,7 @@ simple_plugin(DaqDecoderICARUSPMT module
 	fhiclcpp::fhiclcpp
 	cetlib_except::cetlib_except
 	ROOT::Tree
+	lardata::Utilities
 	)
 
 simple_plugin(PMTconfigurationExtraction module

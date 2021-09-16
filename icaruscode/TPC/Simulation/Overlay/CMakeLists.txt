@@ -1,5 +1,7 @@
 add_subdirectory(tools)
 
+include_directories(${FFTW3_INCLUDE_DIRS})
+
 art_make(
 	MODULE_LIBRARIES
 		larcorealg::Geometry
@@ -9,8 +11,9 @@ art_make(
 		lardataobj::Simulation
 		lardata::Utilities
 		larevt::Filters
-		lardataobj_RawData
+		lardataobj::RawData
 		lardataalg::DetectorInfo
+                icarus_signal_processing::icarus_signal_processing
 		icaruscode_TPC_Utilities_SignalShapingICARUSService_service
 		larevt::CalibrationDBI_Providers
 		nurandom::RandomUtils_NuRandomService_service
@@ -31,7 +34,7 @@ art_make(
 		CLHEP::Random
 		ROOT::Geom
 		ROOT::XMLIO
-		${ROOT_GDML}
+		ROOT::Gdml
 	)
 
 #install_headers()

@@ -1,5 +1,5 @@
-include_directories(${ICARUS_FFTW_INCLUDE_DIRS})
-link_directories(${ICARUS_FFTW_LIBRARY_DIRS})
+include_directories(${FFTW3_INCLUDE_DIRS})
+link_directories(${FFTW3_LIBRARY_DIRS})
 
 art_make(
 	LIB_LIBRARIES
@@ -33,8 +33,8 @@ art_make(
 		cetlib::cetlib cetlib_except::cetlib_except
 		ROOT::Geom
 		ROOT::XMLIO
-		${ROOT_GDML}
-		${ROOT_FFTW}
+		ROOT::Gdml
+		ROOT::FFTW
 
 	TOOL_LIBRARIES
 		icaruscode::TPC_Calorimetry_Algorithms
@@ -62,7 +62,7 @@ art_make(
 		fhiclcpp::fhiclcpp
 		cetlib::cetlib cetlib_except::cetlib_except
 		ROOT::Geom
-		${ROOT_FFTW}
+		ROOT::FFTW
 	)
 
 install_headers()

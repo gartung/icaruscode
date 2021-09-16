@@ -28,8 +28,8 @@ art_make(
 			fhiclcpp::fhiclcpp
 			cetlib::cetlib
 			cetlib_except::cetlib_except
-			${Boost_FILESYSTEM_LIBRARY}
-			${Boost_SYSTEM_LIBRARY}
+			Boost::filesystem
+			Boost::system
 			CLHEP::Random
 )
 

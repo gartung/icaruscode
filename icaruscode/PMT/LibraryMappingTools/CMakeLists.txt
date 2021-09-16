@@ -4,16 +4,16 @@ art_make_library(
 		LIBRARIES
 			larsim::PhotonPropagation_LibraryMappingTools
 			larcore::Geometry_Geometry_service
-			larcorealg:Geometry
+			larcorealg::Geometry
                         lardataalg::DetectorInfo
 			art::Framework_Services_Registry
 			art::Utilities
 			canvas::canvas
-			${CETLIB_EXCEPT}
+			cetlib_except::cetlib_except
 			messagefacility::MF_MessageLogger
 			fhiclcpp::fhiclcpp
-			${ROOT_GENVECTOR}
-			${Boost_SYSTEM_LIBRARY}
+			ROOT::GenVector
+			Boost::system
 		)
 
 simple_plugin(ICARUSPhotonMappingTransformations "tool"

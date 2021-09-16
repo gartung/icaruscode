@@ -22,9 +22,9 @@ set(hitfinder_tool_lib_list
 			messagefacility::headers
 			fhiclcpp::fhiclcpp
 			cetlib::cetlib
-			${Boost_FILESYSTEM_LIBRARY}
-			${Boost_SYSTEM_LIBRARY}
-i			CLHEP::Random			
+			Boost::filesystem
+			Boost::system
+			CLHEP::Random			
 )
 
 art_make(TOOL_LIBRARIES ${hitfinder_tool_lib_list})

@@ -7,7 +7,8 @@ art_make(
 		"DuplicateEventTracker_service.cc"
 	LIB_LIBRARIES
 		art_root_io::RootDB
-		${SQLITE3}
+		SQLite::SQLite3
+                lardata::Utilities
 		canvas::canvas
 		cetlib_except::cetlib_except
 		cetlib::cetlib

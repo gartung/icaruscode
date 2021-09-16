@@ -22,7 +22,7 @@ art_make(
 		larreco::RecoAlg_CMTool_CMTAlgMatch
 		larreco::RecoAlg_CMTool_CMToolApp
 		${ROOT_MATHCORE}
-		${ROOT_GENVECTOR}
+		ROOT::GenVector
 		ROOT::Geom
 		larreco::RecoAlg_TCAlg
 		larreco::RecoAlg_ImagePatternAlgs_DataProvider
@@ -68,7 +68,7 @@ art_make(
 		larreco::RecoAlg_CMTool_CMTAlgMatch
 		larreco::RecoAlg_CMTool_CMToolApp
 		${ROOT_MATHCORE}
-		${ROOT_GENVECTOR}
+		ROOT::GenVector
 		ROOT::Geom
 		larreco::RecoAlg_TCAlg
 		larreco::RecoAlg_ImagePatternAlgs_DataProvider

@@ -25,7 +25,7 @@ art_make(
 		fhiclcpp::fhiclcpp
 		ROOT::Geom
 		ROOT::XMLIO
-		${ROOT_GDML}
+		ROOT::Gdml
 		
 	MODULE_LIBRARIES
 		icaruscode::PMT_OpReco_FlashFinder
@@ -34,6 +34,8 @@ art_make(
 		larcorealg::Geometry
 		lardataobj::RecoBase
 		${LARDATA_LIB}
+                lardata::Utilities
+                larcore::Geometry_AuxDetGeometry_service
 		canvas::canvas
 		cetlib::cetlib
 		cetlib_except::cetlib_except
@@ -51,7 +53,7 @@ art_make(
 		fhiclcpp::fhiclcpp
 		ROOT::Geom
 		ROOT::XMLIO
-		${ROOT_GDML}
+		ROOT::Gdml
 		ROOT::Core
 )							
 

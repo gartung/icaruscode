@@ -27,8 +27,8 @@ art_make(
 			CLHEP::Random
 			ROOT::Geom
 			ROOT::XMLIO
-			${ROOT_GDML}
-			${ROOT_FFTW}
+			ROOT::Gdml
+			ROOT::FFTW
 			ROOT::Core
 )
 

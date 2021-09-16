@@ -1,7 +1,7 @@
 add_subdirectory(tools)
 
 add_definitions(-DEIGEN_FFTW_DEFAULT)
-
+include_directories(${FFTW3_INCLUDE_DIRS})
 art_make(
 	EXCLUDE
 		SimWireICARUS_module.cc
@@ -14,6 +14,7 @@ art_make(
 		lardata::Utilities
 		larevt::Filters
 		lardataobj::RawData
+		icarus_signal_processing::icarus_signal_processing
 		icaruscode::TPC_Utilities_SignalShapingICARUSService_service
 		larevt::CalibrationDBI_Providers
 		nurandom::RandomUtils_NuRandomService_service
@@ -34,7 +35,7 @@ art_make(
 		CLHEP::Random
 		ROOT::Geom
 		ROOT::XMLIO
-		${ROOT_GDML}
+		ROOT::Gdml
 		)
 
 simple_plugin(SimWireICARUS "module"
@@ -48,6 +49,7 @@ simple_plugin(SimWireICARUS "module"
 		larevt::Filters
 		lardataobj::RawData
 		icaruscode::TPC_Utilities_SignalShapingICARUSService_service
+		icarus_signal_processing::icarus_signal_processing
 		larevt::CalibrationDBI_Providers
 		nurandom::RandomUtils_NuRandomService_service
 		art::Framework_Core
@@ -67,7 +69,7 @@ simple_plugin(SimWireICARUS "module"
 		CLHEP::Random
 		ROOT::Geom
 		ROOT::XMLIO
-		${ROOT_GDML}
+		ROOT::Gdml
 		)
 
 #install_headers()
