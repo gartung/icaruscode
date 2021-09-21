@@ -89,11 +89,11 @@ find_package(PostgreSQL)
 cet_find_library(PQ NAMES pq )
 
 #deal with fftw
-cet_find_library(ICARUS_FFTW3_LIBRARY  NAMES fftw3  PATHS ${FFTW3_LIBRARY_DIRS} )
-cet_find_library(ICARUS_FFTW3F_LIBRARY NAMES fftw3f PATHS ${FFTW3_LIBRARY_DIRS} )
-cet_find_library(ICARUS_FFTW3L_LIBRARY NAMES fftw3l PATHS ${FFTW3_LIBRARY_DIRS} )
-cet_find_library(ICARUS_FFTW3Q_LIBRARY NAMES fftw3q PATHS ${FFTW3_LIBRARY_DIRS} )
-set(ICARUS_FFTW_LIBRARIES ICARUS_FFTW3_LIBRARY ICARUS_FFTW3F_LIBRARY ICARUS_FFTW3L_LIBRARY ICARUS_FFTW3Q_LIBRARY)
+find_package( PkgConfig REQUIRED)
+pkg_search_module(FFTW3 REQUIRED IMPORTED_TARGET GLOBAL fftw3f fftw3 fftw3q fftw3l fftw3_threads fftw3f_threeads fftw3q_threads)
+set(ICARUS_FFTW_LIBRARIES PkgConfig::FFTW3)
+
+
 
 # macros for dictionary and simple_plugin
 include(ArtDictionary)
