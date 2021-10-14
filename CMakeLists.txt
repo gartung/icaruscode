@@ -15,9 +15,8 @@ cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 cmake_policy(VERSION 3.18)
 
 
-
 find_package(cetmodules 2.25.04 REQUIRED)
-project(icaruscode VERSION 09.28.02 LANGUAGES CXX)
+project(icaruscode VERSION 09.32.01.01 LANGUAGES CXX)
 
 message(STATUS
   "\n-- ============================================================================="
@@ -92,8 +91,6 @@ cet_find_library(PQ NAMES pq )
 find_package( PkgConfig REQUIRED)
 pkg_search_module(FFTW3 REQUIRED IMPORTED_TARGET GLOBAL fftw3f fftw3 fftw3q fftw3l fftw3_threads fftw3f_threeads fftw3q_threads)
 set(ICARUS_FFTW_LIBRARIES PkgConfig::FFTW3)
-
-
 
 # macros for dictionary and simple_plugin
 include(ArtDictionary)

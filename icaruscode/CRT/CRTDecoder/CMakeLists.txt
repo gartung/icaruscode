@@ -8,7 +8,10 @@ art_make(
 	CRTRawTree.cc
 	CRTPreProcessTree.cc
 	CRTMergePreProcessTrees.cxx
+<<<<<<< HEAD
 	BernCRTTranslator.cc
+=======
+>>>>>>> v09_32_01_01
 	
 	NO_PLUGINS
 	BASENAME_ONLY
@@ -103,6 +106,7 @@ art_make_library(
 		CRT_PREPROCESS_TREE
 )
 
+<<<<<<< HEAD
 art_make_library(
 	LIBRARY_NAME
 		BERN_CRT_TRANSLATOR
@@ -202,5 +206,83 @@ simple_plugin(DecoderICARUSCRT "module"
 	sbnobj::Common_CRT
 	ROOT::Tree ROOT::Hist ROOT::Core
 	)
+=======
+install_headers()
+install_source()
+
+simple_plugin( BernCRTAna "module"
+  art_Framework_Services_Registry
+  art_root_io_tfile_support
+  art_root_io_TFileService_service
+  ${ROOT_BASIC_LIB_LIST}
+        ${ARTDAQ-CORE_UTILITIES}
+  sbndaq_artdaq_core::sbndaq-artdaq-core_Overlays_Common 
+  artdaq_core::artdaq-core_Data
+)
+
+simple_plugin( CrtNoiseMonTool "module"
+  art_Framework_Services_Registry
+  art_root_io_tfile_support
+  art_root_io_TFileService_service
+  #art_Framework_Services_Optional
+  #art_Framework_Services_Optional_TFileService_service
+  ${ROOT_BASIC_LIB_LIST}
+        ${ARTDAQ-CORE_UTILITIES}
+  sbndaq_artdaq_core::sbndaq-artdaq-core_Overlays_Common 
+  artdaq_core::artdaq-core_Data
+)
+
+simple_plugin( CrtCalAnalysis "module"
+  art_Framework_Services_Registry
+  art_root_io_tfile_support
+  art_root_io_TFileService_service
+  #art_Framework_Services_Optional
+  #art_Framework_Services_Optional_TFileService_service
+  ${ROOT_BASIC_LIB_LIST}
+        ${ARTDAQ-CORE_UTILITIES}
+  sbndaq_artdaq_core::sbndaq-artdaq-core_Overlays_Common 
+  artdaq_core::artdaq-core_Data
+  CRT_CAL
+)
+
+simple_plugin( AnaProducer "module"
+  art_Framework_Services_Registry
+  art_root_io_tfile_support
+  art_root_io_TFileService_service
+  #art_Framework_Services_Optional
+  #art_Framework_Services_Optional_TFileService_service
+  ${ROOT_BASIC_LIB_LIST}
+        ${ARTDAQ-CORE_UTILITIES}
+  sbndaq_artdaq_core::sbndaq-artdaq-core_Overlays_Common 
+  artdaq_core::artdaq-core_Data
+  CRT_CAL
+  CRT_CAL_TREE
+  CRT_RAW_TREE
+  CRT_TIMING
+)
+
+simple_plugin( CRTEventProducer "module"
+  art_Framework_Services_Registry
+  art_root_io_tfile_support
+  art_root_io_TFileService_service
+  #art_Framework_Services_Optional
+  #art_Framework_Services_Optional_TFileService_service
+  #${ROOT_BASIC_LIB_LIST}
+  CRT_PREPROCESS_TREE
+  #CRT_CAL_TREE
+  sbnobj_Common_CRT
+)
+
+simple_plugin( DecoderICARUSCRT "module"
+  art_Framework_Services_Registry
+  art_root_io_tfile_support
+  art_root_io_TFileService_service
+  ${ROOT_BASIC_LIB_LIST}
+  ${ARTDAQ-CORE_UTILITIES}
+  sbndaq_artdaq_core::sbndaq-artdaq-core_Overlays_Common
+  artdaq_core::artdaq-core_Data
+  sbnobj_Common_CRT
+)
+>>>>>>> v09_32_01_01
 
 install_fhicl()

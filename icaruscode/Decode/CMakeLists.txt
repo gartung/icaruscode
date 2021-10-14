@@ -58,7 +58,6 @@ simple_plugin(DaqDecoderICARUSPMT module
 	ROOT::Tree
 	lardata::Utilities
 	)
-
 simple_plugin(PMTconfigurationExtraction module
 	icaruscode::Decode_DecoderTools
 	sbnobj::Common_PMT_Data
